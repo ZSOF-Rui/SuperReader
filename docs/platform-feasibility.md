@@ -11,7 +11,7 @@
 
 | 平台 | 结论 | 能覆盖什么 | 主要缺口 |
 |---|---|---|---|
-| Android | 已可用 | 交通联合、城市一卡通、银联/EMV 银行卡、电子证件；开发版另有 6 张实验卡 | 实验卡仍待真卡验收 |
+| Android | 已可用 | 交通联合、城市一卡通、银联/EMV 银行卡、电子证件；三个 flavor 均含 6 张实验卡 | 实验卡仍待真卡验收 |
 | iOS | **部分可行** | 电子护照/通行证（需自实现 BAC + DG2）、澳门通/T-money/EZ-Link（需卡支持可 SELECT 的 AID）、八达通/Suica（需 FeliCa entitlement） | **银行卡不可行**（Apple 不允许选择支付类 AID）；**悠游卡不可行**（CoreNFC 不支持 MIFARE Classic）；只能前台读卡 |
 | Windows | **有条件可行** | 银行卡、护照、澳门通、T-money、EZ-Link（PC/SC + ISO 7816）；八达通/Suica（Sony FeliCa SDK）；悠游卡（读卡器厂商 MIFARE 命令） | 桌面通常无 NFC，必须外接读卡器；FeliCa SDK 需授权；WSA 已停止支持 |
 | Web（Web NFC） | **仅 NDEF 可行** | NDEF 标签的文本、网址、MIME 与 Smart Poster 记录 | **交通卡 / 银行卡 / 护照不可行**：Web NFC 不暴露 ISO 7816 APDU；不支持 FeliCa / MIFARE Classic；仅 Android Chrome、前台、HTTPS |
