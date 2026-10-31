@@ -27,6 +27,17 @@
 | 预览版 1.7.0-preview2 | 在正式版基础上增加完整卡产品名（162 家银行、1,163 个号段）与全球 6 位 BIN 离线兜底 |
 | 开发版 1.8.0-dev2 | 四套配色、手机读卡桥接；不对外发布 |
 
+## 界面预览
+
+<p align="center">
+  <img src="docs/images/app-home.png" width="200" alt="首页：把卡片贴在手机背面，提供交通卡、银行卡与电子证件入口">
+  <img src="docs/images/app-transit.png" width="200" alt="交通卡读取结果：余额与交易记录">
+  <img src="docs/images/app-bank.png" width="200" alt="银行卡读取结果：Visa 信用卡公开信息">
+  <img src="docs/images/app-settings.png" width="200" alt="设置页：版本信息与官网、GitHub、镜像三路检查更新">
+</p>
+
+截图来自 Android 模拟器，卡片、余额与交易均为**演示数据**，不是真实卡片的读取结果；六张实验卡、BIN 推断与 Windows 桌面版仍需真卡验收。
+
 ## 能做什么
 
 - **交通卡**：交通联合、城市一卡通余额与交易记录；正式版与预览版另提供八达通、澳门通、悠游卡、T-money、Suica、EZ-Link 六张实验卡读取，开发版同样包含。
