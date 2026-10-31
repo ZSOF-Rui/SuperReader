@@ -2,8 +2,8 @@
 
 只读的 NFC 卡片信息工具。Android 版读取交通卡、PBOC / EMV 银行卡与 ICAO 电子证件；Windows 版通过 PC/SC 读卡器读取银行卡公开数据。读卡与解析都在本机完成，只有用户手动点击“检查更新”时，才通过 HTTPS 读取官网或 GitHub 的版本清单。
 
-- 官网：[superreader.828696.xyz](https://superreader.828696.xyz/)
-- GitHub Pages 备用地址：[zsof-rui.github.io/SuperReader](https://zsof-rui.github.io/SuperReader/)
+- 官网：[superreader.828696.xyz](https://superreader.828696.xyz/)（需在 Cloudflare 配置 `CNAME superreader → zsof-rui.github.io` 后生效；在此之前请使用下面的 Pages 地址）
+- GitHub Pages 原始地址：[zsof-rui.github.io/SuperReader](https://zsof-rui.github.io/SuperReader/)（仓库已设置自定义域名，当前会 301 到尚未解析的官网域名）
 - 问题反馈：[Issues](https://github.com/ZSOF-Rui/SuperReader/issues)
 - 版本历史：[CHANGELOG.md](CHANGELOG.md)
 
@@ -29,7 +29,7 @@
 
 ## 能做什么
 
-- **交通卡**：交通联合、城市一卡通余额与交易记录；开发版另实验读取八达通、澳门通、悠游卡、T-money、Suica、EZ-Link。
+- **交通卡**：交通联合、城市一卡通余额与交易记录；正式版与预览版另提供八达通、澳门通、悠游卡、T-money、Suica、EZ-Link 六张实验卡读取，开发版同样包含。
 - **银行卡**：PBOC / EMV 公开数据，卡号默认脱敏；离线 BIN 表只用于参考发卡行、卡种与卡产品名。
 - **电子证件**：电子护照与港澳台通行证公开字段、证件照；读取公开数据，不做签证、真伪或签发机构认证。
 - **本机保存**：历史、卡包、诊断导出都在应用私有目录，可随时清空。
