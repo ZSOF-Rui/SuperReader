@@ -1,0 +1,303 @@
+/* 卡阅 SuperReader — Web NFC lab page. */
+
+.lab-hero {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+  background:
+    radial-gradient(700px 380px at 88% 4%, rgba(11, 107, 93, .11), transparent 70%),
+    radial-gradient(520px 300px at 4% 96%, rgba(215, 166, 72, .07), transparent 72%),
+    var(--bg);
+}
+.lab-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(11, 107, 93, .035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11, 107, 93, .035) 1px, transparent 1px);
+  background-size: 56px 56px;
+  pointer-events: none;
+  mask-image: linear-gradient(to bottom, #000 0%, transparent 90%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 90%);
+}
+.lab-hero .shell {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, .95fr);
+  gap: 44px;
+  align-items: center;
+  padding-block: 62px 56px;
+}
+.lab-copy h1 {
+  margin-top: 20px;
+  font-size: clamp(32px, 3.4vw, 44px);
+  max-width: 100%;
+}
+.lab-boundary {
+  margin-top: 22px;
+  padding: 14px 16px;
+  border-left: 3px solid var(--amber);
+  border-radius: 0 12px 12px 0;
+  background: rgba(255, 255, 255, .7);
+  color: var(--body);
+  font-size: 14.5px;
+}
+.lab-boundary strong { color: var(--amber-deep); }
+.lab-copy .hero-actions { margin-top: 24px; }
+
+.support-panel {
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+.support-panel h2 { font-size: 19px; margin-bottom: 14px; }
+.support-row {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+  padding: 11px 0;
+  border-top: 1px solid var(--line);
+  font-size: 13.5px;
+}
+.support-row dt { color: var(--muted); }
+.support-row dd { margin: 0; color: var(--ink); overflow-wrap: anywhere; }
+.support-state {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11.5px;
+  font-weight: 700;
+  background: #edf1ee;
+  color: #4a5852;
+}
+.support-state.is-ok { background: var(--pine-soft); color: var(--pine-deep); }
+.support-state.is-warn { background: var(--amber-soft); color: var(--amber-deep); }
+.support-state.is-bad { background: #fdeceb; color: var(--danger); }
+.support-note { margin-top: 12px; font-size: 12px; color: var(--muted); }
+.support-note code { font-size: 11px; }
+.support-panel .btn { margin-top: 16px; }
+
+.scanner-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, .75fr);
+  gap: 26px;
+  align-items: start;
+}
+.scanner-panel {
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+.scan-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn:disabled,
+.btn[disabled] {
+  opacity: .48;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+.scan-status {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 16px;
+  min-height: 28px;
+  font-size: 13px;
+  color: var(--body);
+}
+.scan-dot {
+  width: 9px;
+  height: 9px;
+  flex: none;
+  border-radius: 50%;
+  background: #9fb5ad;
+}
+.is-scanning .scan-dot {
+  background: var(--pine);
+  animation: soft-pulse 1.5s ease-out infinite;
+}
+.scan-status.is-ok .scan-dot { background: var(--pine); }
+.scan-status.is-warn .scan-dot { background: var(--amber); }
+.scan-status.is-error .scan-dot { background: var(--danger); }
+
+.scan-results {
+  margin-top: 16px;
+  min-height: 210px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+.scan-empty {
+  padding: 36px 12px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 13.5px;
+}
+.message-card {
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fbfdfb;
+  animation: fade-slide .32s cubic-bezier(.22,.61,.36,1) both;
+}
+.message-card + .message-card { margin-top: 10px; }
+.message-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  color: var(--muted);
+}
+.message-head strong { font-size: 13px; color: var(--ink); }
+.message-serial { margin-top: 4px; font-family: var(--font-mono); font-size: 11px; color: var(--muted); overflow-wrap: anywhere; }
+.record-list { margin-top: 10px; display: flex; flex-direction: column; gap: 8px; }
+.record-card {
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: var(--paper);
+}
+.record-type {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: .5px;
+  color: var(--pine);
+  text-transform: uppercase;
+}
+.record-value {
+  margin-top: 4px;
+  font-size: 13px;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+.record-value a { overflow-wrap: anywhere; }
+.record-bytes { color: var(--muted); font-family: var(--font-mono); font-size: 11.5px; }
+.record-nested { display: flex; flex-direction: column; gap: 6px; margin-top: 6px; }
+.scan-footnote { margin-top: 14px; font-size: 11.5px; color: var(--muted); }
+
+.scan-guide {
+  padding: 22px 22px 20px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--mint);
+}
+.scan-guide h3 { font-size: 17px; }
+.scan-guide ol {
+  margin-top: 12px;
+  padding-left: 1.25em;
+  color: var(--body);
+  font-size: 13.5px;
+}
+.scan-guide li + li { margin-top: 7px; }
+.scan-guide p { margin-top: 12px; font-size: 12px; color: var(--muted); }
+.scan-guide code {
+  padding: 1px 4px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, .7);
+  font-size: 11px;
+}
+
+.compare-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+.compare-card {
+  padding: 22px 24px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--paper);
+}
+.compare-card.is-yes { border-top: 3px solid var(--pine); }
+.compare-card.is-no { border-top: 3px solid var(--amber); }
+.compare-card h3 { font-size: 18px; }
+.compare-card > p { margin-top: 8px; color: var(--body); font-size: 14px; }
+.compare-card ul { margin-top: 10px; padding-left: 1.15em; color: var(--body); font-size: 13.5px; }
+.compare-card li + li { margin-top: 4px; }
+.compare-card .compare-result {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
+  font-size: 12.5px;
+  color: var(--muted);
+}
+.compare-card.is-no .compare-result { color: var(--amber-deep); }
+
+.lab-steps {
+  counter-reset: lab-step;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+.lab-steps > li {
+  counter-increment: lab-step;
+  position: relative;
+  padding: 18px 0 18px 54px;
+  border-bottom: 1px solid var(--line);
+  color: var(--body);
+  font-size: 14.5px;
+}
+.lab-steps > li::before {
+  content: counter(lab-step);
+  position: absolute;
+  left: 0;
+  top: 18px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--pine-soft);
+  color: var(--pine-deep);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lab-steps strong { color: var(--ink); }
+
+.lab-cta-box {
+  padding: 30px 32px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background:
+    radial-gradient(420px 220px at 88% 8%, rgba(11, 107, 93, .10), transparent 70%),
+    var(--paper);
+  box-shadow: var(--shadow);
+}
+.lab-cta-box h2 { margin-top: 8px; font-size: 26px; }
+.lab-cta-box p { margin-top: 10px; color: var(--body); font-size: 14.5px; }
+.lab-cta-box .hero-actions { margin-top: 18px; }
+
+.lab-meta {
+  margin-top: 16px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: .4px;
+  color: var(--muted);
+}
+
+@media (max-width: 980px) {
+  .lab-hero .shell { grid-template-columns: 1fr; gap: 30px; padding-block: 48px 42px; }
+  .support-panel { max-width: 560px; }
+  .scanner-grid { grid-template-columns: 1fr; }
+  .scan-guide { order: 2; }
+  .compare-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 760px) {
+  .lab-hero .shell { padding-block: 38px 34px; }
+  .support-panel, .scanner-panel { padding: 20px 18px; }
+  .scan-guide { padding: 18px; }
+  .lab-cta-box { padding: 24px 20px; }
+  .lab-steps > li { padding-left: 46px; }
+  .scan-actions .btn { flex: 1 1 100%; }
+}

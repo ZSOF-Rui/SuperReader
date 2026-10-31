@@ -1,0 +1,66 @@
+name: 数据更正
+description: 更正 BIN、银行、卡产品名或城市/卡种/站点数据
+title: "[Data] "
+labels: ["data"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请附公开来源。不要提交从他人卡片、银行内部系统或未授权渠道获得的数据。
+  - type: dropdown
+    id: category
+    attributes:
+      label: 数据类型
+      options:
+        - BIN / 发卡行
+        - 银行名称
+        - 卡产品名
+        - 城市 / 卡种 / 站点
+        - 其他
+    validations:
+      required: true
+  - type: input
+    id: current
+    attributes:
+      label: 当前显示
+      placeholder: 例如 某银行 · 银联借记卡
+    validations:
+      required: true
+  - type: input
+    id: corrected
+    attributes:
+      label: 正确内容
+      placeholder: 例如 某银行 · 某卡产品
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: 公开来源
+      description: 官方公告、开源数据或公开报道链接；请写访问日期
+      placeholder: https://…
+    validations:
+      required: true
+  - type: dropdown
+    id: confidence
+    attributes:
+      label: 证据等级
+      options:
+        - 官方公布
+        - 开源数据整理
+        - 社区报告
+        - 本人真实卡片核对（不提交敏感数据）
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: 补充说明
+      description: 是否涉及多个号段、是否只影响预览版/开发版等
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: 隐私确认
+      options:
+        - label: 我确认来源可公开访问，且内容不含完整卡号、证件信息或他人数据。
+          required: true

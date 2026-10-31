@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>网页 NFC 实验 · 卡阅 SuperReader</title>
+<meta name="description" content="卡阅的 Web NFC 只读实验：在 Chrome for Android 中读取 NDEF 标签。Web NFC 无法读取交通卡、银行卡或护照芯片的 APDU 数据。">
+<meta name="theme-color" content="#f3f6f4">
+<script>document.documentElement.classList.add('js');</script>
+<meta property="og:type" content="website">
+<meta property="og:title" content="网页 NFC 实验 · 卡阅 SuperReader">
+<meta property="og:description" content="浏览器只能读 NDEF 标签；交通卡、银行卡与护照芯片需要 APDU，Web NFC 做不到。">
+<meta property="og:image" content="../assets/og.png">
+<link rel="icon" href="../assets/logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../assets/styles.css">
+<link rel="stylesheet" href="../assets/lab.css">
+</head>
+<body>
+<a class="skip-link" href="#main">跳到正文</a>
+
+<header class="site-header">
+  <div class="shell header-inner">
+    <a class="brand" href="../index.html" aria-label="返回卡阅首页">
+      <img src="../assets/logo.svg" width="42" height="42" alt="">
+      <span class="brand-text"><strong>卡阅</strong><small>SUPERREADER</small></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">菜单</button>
+    <nav class="site-nav" id="site-nav" aria-label="网页实验导航">
+      <a href="#scanner">开始扫描</a>
+      <a href="#limits">能读什么</a>
+      <a href="#why">为什么受限</a>
+      <a href="../index.html#roadmap">开发进展</a>
+      <a class="nav-cta" href="../index.html#download">下载 Android 版</a>
+    </nav>
+  </div>
+  <div class="scroll-meter" aria-hidden="true"></div>
+</header>
+
+<main id="main">
+
+<section class="lab-hero" aria-labelledby="lab-title">
+  <div class="shell">
+    <div class="lab-copy">
+      <p class="eyebrow">网页实验 · Web NFC</p>
+      <h1 id="lab-title">浏览器能读 NDEF 标签，<br>读不了<span class="nowrap">交通卡</span>和<span class="nowrap">银行卡</span>。</h1>
+      <p class="lead">这是卡阅的独立网页实验：在支持 Web NFC 的 Android Chrome 里，靠近 NDEF 标签就能看到文本、网址或 MIME 记录。它不写标签，也不上传数据。</p>
+      <p class="lab-boundary"><strong>结论先说：</strong>完整的交通卡 / 银行卡 / 护照网页版不可行。Web NFC 只提供 NDEF 消息，不暴露 ISO 7816 APDU，也不支持 FeliCa 或 MIFARE Classic；这些芯片数据必须由原生应用读取。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#scanner">开始读 NDEF 标签</a>
+        <a class="btn btn-quiet" href="#why">看技术边界</a>
+      </div>
+      <p class="lab-meta">NDEFReader · Chrome for Android · HTTPS / localhost</p>
+    </div>
+
+    <aside class="support-panel" aria-labelledby="support-title">
+      <h2 id="support-title">当前环境</h2>
+      <dl class="support-list">
+        <div class="support-row">
+          <dt>安全上下文</dt>
+          <dd><span class="support-state" id="support-secure">检测中</span></dd>
+        </div>
+        <div class="support-row">
+          <dt>Web NFC API</dt>
+          <dd><span class="support-state" id="support-api">检测中</span></dd>
+        </div>
+        <div class="support-row">
+          <dt>浏览器</dt>
+          <dd id="support-browser">检测中</dd>
+        </div>
+        <div class="support-row">
+          <dt>数据去向</dt>
+          <dd>只留在本页，不上传</dd>
+        </div>
+      </dl>
+      <p class="support-note" id="support-note">需要 Chrome for Android 89+ 与 HTTPS（或 localhost）。iOS Safari 不提供 Web NFC；桌面 Chrome 通常没有 NFC 硬件。</p>
+    </aside>
+  </div>
+</section>
+
+<section class="section" id="scanner" aria-labelledby="scanner-title">
+  <div class="shell">
+    <header class="section-head">
+      <p class="kicker">只读 NDEF</p>
+      <h2 id="scanner-title">读一张 NDEF 标签</h2>
+      <p>点「开始扫描」，把标签贴近手机背面。浏览器会持续监听；再贴一张标签会追加一条消息。</p>
+    </header>
+
+    <div class="scanner-grid">
+      <div class="scanner-panel">
+        <div class="scan-actions">
+          <button class="btn btn-primary" type="button" id="scan-start">开始扫描</button>
+          <button class="btn btn-quiet" type="button" id="scan-stop" disabled>停止</button>
+        </div>
+        <p class="scan-status" id="scan-status" role="status" aria-live="polite">
+          <span class="scan-dot" aria-hidden="true"></span>
+          <span id="scan-status-text">等待开始</span>
+        </p>
+        <div class="scan-results" id="scan-results" aria-live="polite">
+          <p class="scan-empty">还没有读取结果。这里不会显示演示数据，只有真实 NDEF 标签才会出现记录。</p>
+        </div>
+        <p class="scan-footnote">扫描结果只在本页显示，刷新即清空；本页不发网络请求，也不写入标签。</p>
+      </div>
+
+      <aside class="scan-guide">
+        <h3>测试前确认</h3>
+        <ol>
+          <li>用 Android 手机的 Chrome 打开本页；桌面浏览器没有手机 NFC。</li>
+          <li>系统 NFC 已开启，手机保持解锁并停留在本页。</li>
+          <li>页面通过 HTTPS 或 localhost 打开；<code>file://</code> 不行。</li>
+          <li>手边有一张已经写好内容的 NDEF 标签（文字、网址或 MIME）。</li>
+          <li>点「开始扫描」，把标签贴近手机背面 NFC 感应区。</li>
+        </ol>
+        <p>本页只读 NDEF，不会碰交通卡、银行卡或护照芯片；也不会写标签。读卡位置因手机型号而异。</p>
+        <p>开发者在本机测试：电脑运行 <code>python -m http.server 8765 --directory site</code>，再执行 <code>adb reverse tcp:8765 tcp:8765</code>，手机 Chrome 打开 <code>http://localhost:8765/lab/web-nfc.html</code>。</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="limits" aria-labelledby="limits-title">
+  <div class="shell">
+    <header class="section-head">
+      <p class="kicker">能力边界</p>
+      <h2 id="limits-title">能读什么，读不到什么</h2>
+      <p>Web NFC 的定位很明确：它是标签消息 API，不是智能卡 APDU 通道。把这两类东西混在一起，就容易得出“网页版什么都能读”的错误结论。</p>
+    </header>
+
+    <div class="compare-grid">
+      <article class="compare-card is-yes">
+        <h3>NDEF 标签</h3>
+        <p>NDEF 是 NFC Forum 定义的标签消息格式，常见于网址标签、产品标签、海报与门禁贴。</p>
+        <ul>
+          <li>文本、URL、MIME 记录</li>
+          <li>Smart Poster 的子记录</li>
+          <li>标签序列号（设备提供时）</li>
+        </ul>
+        <p class="compare-result">本页可以读取并展示这些记录。</p>
+      </article>
+
+      <article class="compare-card is-no">
+        <h3>交通卡 / 银行卡 / 护照</h3>
+        <p>这些不是 NDEF 标签，而是需要 APDU 或专用命令的智能卡芯片。</p>
+        <ul>
+          <li>ISO 7816 / ISO-DEP APDU：银行卡、交通联合、护照</li>
+          <li>FeliCa：八达通、Suica</li>
+          <li>MIFARE Classic：悠游卡</li>
+        </ul>
+        <p class="compare-result">Web NFC 不暴露这些命令，本页读不到，也不会假装能读。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="why" aria-labelledby="why-title">
+  <div class="shell">
+    <header class="section-head">
+      <p class="kicker">可行性结论</p>
+      <h2 id="why-title">为什么不做完整网页版</h2>
+      <p>不是页面写不出来，而是浏览器根本没有提供读取这些芯片所需的接口。</p>
+    </header>
+
+    <ol class="lab-steps">
+      <li><strong>API 只到 NDEF。</strong>Web NFC 的 NDEFReader 读取的是标签消息层，不提供 ISO 7816 APDU 通道，也不能选择支付应用或证件应用。银行卡、交通卡与护照都依赖 APDU 会话，网页拿不到。</li>
+      <li><strong>专用技术同样缺席。</strong>八达通、Suica 走 FeliCa，悠游卡走 MIFARE Classic；这两套命令都不在 Web NFC 的暴露范围内，不能用 NDEF 接口替代。</li>
+      <li><strong>浏览器支持很窄。</strong>主要实现是 Chrome for Android；iOS Safari 没有 Web NFC，桌面 Chrome 通常没有 NFC 硬件。页面还必须处于安全上下文：HTTPS 或 localhost。</li>
+      <li><strong>前台限制。</strong>Web NFC 扫描要求页面在前台；切到后台、锁屏或离开页面后就不能继续监听。这不是适合长时间读卡的运行环境。</li>
+      <li><strong>替代方案不是独立网页版。</strong>Android 开发版的局域网桥接可以让电脑借用手机 NFC，但需要安装 App；电脑只接收脱敏文本，不能发送 APDU，也不是“打开网页就能读卡”。</li>
+    </ol>
+    <p class="platform-footnote">所以：网页适合做 NDEF 小工具和边界说明；完整的交通卡、银行卡与电子证件读取，仍由 Android 原生正式版承担。</p>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="lab-cta-title">
+  <div class="shell">
+    <div class="lab-cta-box">
+      <p class="kicker">完整读卡</p>
+      <h2 id="lab-cta-title">交通卡、银行卡、电子证件，还是用 Android 正式版。</h2>
+      <p>正式版只读，读卡与解析在本机完成；INTERNET 权限仅用于手动检查更新。当前公开版本为 1.6.0，本站下载区提供 APK 与 SHA-256 校验值。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="../index.html#download">下载 Android 正式版</a>
+        <a class="btn btn-quiet" href="../index.html#roadmap">看开发进展</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="shell footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="../index.html" aria-label="返回卡阅首页">
+        <img src="../assets/logo.svg" width="38" height="38" alt="">
+        <span class="brand-text"><strong>卡阅</strong><small>SUPERREADER</small></span>
+      </a>
+      <p>网页实验 · 只读 NDEF · 不上传</p>
+    </div>
+    <nav class="footer-col" aria-label="站内链接">
+      <h2>站内</h2>
+      <a href="../index.html#features">功能</a>
+      <a href="../index.html#download">下载</a>
+      <a href="../index.html#cards">支持卡片</a>
+      <a href="../index.html#roadmap">开发进展</a>
+    </nav>
+    <div class="footer-col">
+      <h2>边界</h2>
+      <span>仅 NDEF，不读 APDU</span>
+      <span>Chrome for Android</span>
+      <span>不写标签、不上传</span>
+    </div>
+    <div class="footer-col footer-note">
+      <h2>说明</h2>
+      <p>本页是独立网页实验，不是正式产品功能。扫描结果只存在当前页面，刷新即清空。</p>
+      <p>请只读取本人持有或已获得授权的标签。</p>
+    </div>
+  </div>
+  <div class="shell footer-bottom">
+    <p>© 2026 卡阅 SuperReader</p>
+    <p>页面不加载第三方资源 · 不发网络请求</p>
+  </div>
+</footer>
+
+<script src="../assets/ui.js" defer></script>
+<script src="../assets/lab.js" defer></script>
+</body>
+</html>

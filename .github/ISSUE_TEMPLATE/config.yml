@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 官网与下载
+    url: https://superreader.828696.xyz/
+    about: 查看版本、下载安装包与 SHA-256
+  - name: 私密安全报告
+    url: https://github.com/ZSOF-Rui/SuperReader/security/advisories/new
+    about: 不要公开提交漏洞细节、卡号、证件信息或密钥

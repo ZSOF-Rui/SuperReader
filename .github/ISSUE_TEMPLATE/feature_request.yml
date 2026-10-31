@@ -1,0 +1,47 @@
+name: 功能建议
+description: 建议站点、文档或应用改进
+title: "[Feature] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        核心源码不公开，应用内功能的实现类建议可能无法直接合并；站点、文档、数据与可访问性改进更容易落地。
+  - type: dropdown
+    id: scope
+    attributes:
+      label: 范围
+      options:
+        - 官网 / 下载页
+        - 文档 / 参考资料
+        - Android 应用
+        - Windows 应用
+        - 数据与协议
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: 要解决的问题
+      description: 请描述使用场景，而不是只给实现方案
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: 建议方案
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: 考虑过的替代方案
+  - type: checkboxes
+    id: boundaries
+    attributes:
+      label: 边界确认
+      options:
+        - label: 该建议不涉及写卡、克隆、模拟、充值或密钥破解。
+          required: true
+        - label: 该建议不要求上传卡片数据或引入隐式联网。
+          required: true

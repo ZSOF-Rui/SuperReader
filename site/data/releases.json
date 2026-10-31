@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-10-31T19:54:44+08:00",
+  "name": "卡阅 SuperReader",
+  "description": "Android NFC 只读卡片信息工具。应用只在用户手动“检查更新”时通过 HTTPS 读取官网与 GitHub 的版本清单，不上传卡片数据。本清单包含正式版与预览版两个通道。",
+  "channels": {
+    "stable": {
+      "label": "正式版",
+      "packageName": "com.superreader.app",
+      "channelNote": "稳定功能，公开下载默认推荐；六张实验卡仍是实验状态。",
+      "latest": {
+        "versionName": "1.6.0",
+        "versionCode": 13,
+        "releasedAt": "2026-10-31T19:54:44+08:00",
+        "file": "downloads/SuperReader-1.6.0.apk",
+        "sizeBytes": 11840542,
+        "sha256": "10f4c9b6c276fdc8dcc6a9c3eb83ed9c7e3c92b11f74813a5c6e3ff9513960b7",
+        "minSdk": 26,
+        "minAndroid": "8.0",
+        "experimental": true,
+        "notes": [
+          "交通联合、城市一卡通、银联 / EMV 银行卡与电子证件读取。",
+          "新增八达通、澳门通、悠游卡、T-money、Suica、EZ-Link 六张实验卡，均未在真实卡片上逐张验证，不承诺成功率。",
+          "设置里的“检查更新”会同时查询官网与 GitHub 的版本清单，手动触发，不上传卡片数据。",
+          "离线 BIN 推断发卡行、卡种与卡产品名，卡号默认脱敏；本地保存、历史记录与诊断导出。"
+        ]
+      },
+      "history": [
+        {
+          "versionName": "1.5.0",
+          "versionCode": 9,
+          "releasedAt": "2026-10-30T15:45:20+08:00",
+          "file": "downloads/SuperReader-1.5.0.apk",
+          "sizeBytes": 11777214,
+          "sha256": "7c4570587427747f8f717930a172b37ab052978da5cff36f53a466bd22c9ed98",
+          "notes": [
+            "交通联合、城市一卡通、银联 / EMV 银行卡与电子证件读取。",
+            "离线 BIN 推断发卡行与卡种，卡号默认脱敏。"
+          ]
+        }
+      ]
+    },
+    "preview": {
+      "label": "预览版",
+      "packageName": "com.superreader.app.preview",
+      "channelNote": "实验功能，独立包名，测试签名；请先看实验卡说明。",
+      "latest": {
+        "versionName": "1.7.0-preview1",
+        "versionCode": 22,
+        "releasedAt": "2026-10-31T19:54:44+08:00",
+        "file": "downloads/SuperReader-1.7.0-preview1.apk",
+        "sizeBytes": 13509679,
+        "sha256": "260f6d1d2375487ceecc790dbab38f62cc1e7ab7842c7c492e63d46bc2d30122",
+        "minSdk": 26,
+        "minAndroid": "8.0",
+        "experimental": true,
+        "notes": [
+          "在正式版 1.6.0 基础上，补充完整卡产品名与全球公开 BIN 离线参考数据。",
+          "八达通、澳门通、悠游卡、T-money、Suica、EZ-Link 六张实验卡均未在真实卡片上逐张验证，不承诺成功率。",
+          "设置里的“检查更新”会同时查询官网与 GitHub；只读取版本清单，不上传卡片数据。",
+          "独立包名 com.superreader.app.preview，可与正式版共存；测试签名。"
+        ]
+      },
+      "history": [
+        {
+          "versionName": "1.6.0-preview1",
+          "versionCode": 12,
+          "releasedAt": "2026-10-31T01:05:00+08:00",
+          "file": "downloads/SuperReader-1.6.0-preview1.apk",
+          "sizeBytes": 11804149,
+          "sha256": "ea44ce203fca555dfdaac192b4949b93d4f955fc13233dc601d71083632719f1",
+          "notes": [
+            "在正式版功能基础上，增加六张实验卡读取。",
+            "六张实验卡均未在真实卡片上逐张验证。"
+          ]
+        }
+      ]
+    }
+  }
+}
