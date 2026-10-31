@@ -29,12 +29,12 @@
       "label": "正式版",
       "packageName": "com.superreader.app",
       "latest": {
-        "versionName": "1.6.1",
-        "versionCode": 14,
-        "releasedAt": "2026-10-31T20:34:09+08:00",
-        "file": "downloads/SuperReader-1.6.1.apk",
-        "sizeBytes": 11837625,
-        "sha256": "90fed5aa6314c76478c86447bfb267ced0143a40871b5efedb826521e240fc0b",
+        "versionName": "1.7.0",
+        "versionCode": 15,
+        "releasedAt": "2026-11-01T01:45:00+08:00",
+        "file": "downloads/SuperReader-1.7.0.apk",
+        "sizeBytes": 11838213,
+        "sha256": "7674aa73d41801ce614d8fca97f34b6074d68aa1a7b1e03a09c4687b6fd46568",
         "notes": ["…"]
       },
       "history": []
@@ -63,7 +63,7 @@
 
 | 现象 | 含义 |
 | --- | --- |
-| `官网：Unable to resolve host` | 自定义域名 DNS 未配置或当前网络无法解析 |
+| `官网：Unable to resolve host` | 当前网络无法解析自定义域名（DNS 已配置好，通常是本地网络、代理或 DNS 问题） |
 | `GitHub：HTTP 404` | 仓库或 `main` 分支上的清单路径不存在 |
 | `镜像：HTTP 5xx` | 镜像站暂不可用，官网与 GitHub 仍可完成检查 |
 | `清单中没有可用的 stable 通道` | 清单可访问，但渠道或字段不合法 |

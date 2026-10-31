@@ -116,7 +116,7 @@ base64 -w0 ~/.android/debug.keystore > debug.keystore.base64
 ## 发布状态与限制
 
 - 当前下载是 **debug / 测试签名**，不是应用商店正式签名包。
-- 公开站点与版本清单包含正式版 1.6.1 与预览版 1.7.0-preview2；六张实验卡随正式版发布，但均未真卡逐张验证。开发版 1.8.0-dev2 留给内部测试，不在此发布。
+- 公开站点与版本清单包含正式版 1.7.0 与预览版 1.8.0-preview1；六张实验卡随正式版发布，但均未真卡逐张验证。开发版 1.9.0-dev1 留给内部测试，不在此发布。
 - 下载区另有 Windows 1.1.0-preview2 测试包：PC/SC 只读，未在真实读卡器与真实银行卡上验收，无代码签名。
 - 站点已移除跨平台对比与相关描述；主站只保留 Android 下载、Windows 测试版下载、功能、卡片、开发进展、隐私与 FAQ。
-- 自定义域名 `superreader.828696.xyz` 需要在域名服务商处配置 CNAME 后才会生效；GitHub Pages 默认地址 `https://zsof-rui.github.io/SuperReader/` 不依赖该 DNS。
+- 自定义域名 `superreader.828696.xyz` 已解析到 Cloudflare（104.21.30.65 / 172.67.172.53）；GitHub Pages 默认地址 `https://zsof-rui.github.io/SuperReader/` 不依赖该 DNS。

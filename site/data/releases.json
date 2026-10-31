@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-31T20:34:09+08:00",
+  "updatedAt": "2026-11-01T01:45:00+08:00",
   "name": "卡阅 SuperReader",
   "description": "Android NFC 只读卡片信息工具。应用只在用户手动“检查更新”时通过 HTTPS 读取官网、GitHub 与镜像站的版本清单，不上传卡片数据。本清单包含正式版与预览版两个通道。",
   "channels": {
@@ -9,23 +9,40 @@
       "packageName": "com.superreader.app",
       "channelNote": "稳定功能，公开下载默认推荐；六张实验卡仍是实验状态。",
       "latest": {
-        "versionName": "1.6.1",
-        "versionCode": 14,
-        "releasedAt": "2026-10-31T20:34:09+08:00",
-        "file": "downloads/SuperReader-1.6.1.apk",
-        "sizeBytes": 11837625,
-        "sha256": "90fed5aa6314c76478c86447bfb267ced0143a40871b5efedb826521e240fc0b",
+        "versionName": "1.7.0",
+        "versionCode": 15,
+        "releasedAt": "2026-11-01T01:45:00+08:00",
+        "file": "downloads/SuperReader-1.7.0.apk",
+        "sizeBytes": 11838213,
+        "sha256": "7674aa73d41801ce614d8fca97f34b6074d68aa1a7b1e03a09c4687b6fd46568",
         "minSdk": 26,
         "minAndroid": "8.0",
         "experimental": true,
         "notes": [
-          "交通联合、城市一卡通、银联 / EMV 银行卡与电子证件读取。",
-          "新增八达通、澳门通、悠游卡、T-money、Suica、EZ-Link 六张实验卡，均未在真实卡片上逐张验证，不承诺成功率。",
-          "设置里的“检查更新”会同时查询官网、GitHub 与镜像站的版本清单，手动触发，不上传卡片数据。",
-          "离线 BIN 推断发卡行、卡种与卡产品名，卡号默认脱敏；本地保存、历史记录与诊断导出。"
+          "交通联合、城市一卡通、银联 / EMV 银行卡与电子证件读取；六张实验卡仍是实验状态。",
+          "设置页把“支持的卡片与限制”和“隐私与数据”合并为“支持与隐私”；证件名称改用官方全称。",
+          "同一卡号的多支付应用合并显示；补正香港与境内外币卡 BIN，国内交易仍为离线推断。",
+          "设置里的“检查更新”会同时查询官网、GitHub 与镜像站；只读取版本清单，不上传卡片数据。"
         ]
       },
       "history": [
+        {
+          "versionName": "1.6.1",
+          "versionCode": 14,
+          "releasedAt": "2026-10-31T20:34:09+08:00",
+          "file": "downloads/SuperReader-1.6.1.apk",
+          "sizeBytes": 11837625,
+          "sha256": "90fed5aa6314c76478c86447bfb267ced0143a40871b5efedb826521e240fc0b",
+          "minSdk": 26,
+          "minAndroid": "8.0",
+          "experimental": true,
+          "notes": [
+            "交通联合、城市一卡通、银联 / EMV 银行卡与电子证件读取。",
+            "新增八达通、澳门通、悠游卡、T-money、Suica、EZ-Link 六张实验卡，均未在真实卡片上逐张验证，不承诺成功率。",
+            "设置里的“检查更新”会同时查询官网、GitHub 与镜像站的版本清单，手动触发，不上传卡片数据。",
+            "离线 BIN 推断发卡行、卡种与卡产品名，卡号默认脱敏；本地保存、历史记录与诊断导出。"
+          ]
+        },
         {
           "versionName": "1.6.0",
           "versionCode": 13,
@@ -59,23 +76,62 @@
       "packageName": "com.superreader.app.preview",
       "channelNote": "实验功能，独立包名，测试签名；请先看实验卡说明。",
       "latest": {
-        "versionName": "1.7.0-preview2",
-        "versionCode": 23,
-        "releasedAt": "2026-10-31T20:34:09+08:00",
-        "file": "downloads/SuperReader-1.7.0-preview2.apk",
-        "sizeBytes": 13506766,
-        "sha256": "c11c6d67239b4bd3b2cda250d95436e302ecf17d4cbac19386d0a8806f65e74d",
+        "versionName": "1.8.0-preview1",
+        "versionCode": 25,
+        "releasedAt": "2026-11-01T01:45:00+08:00",
+        "file": "downloads/SuperReader-1.8.0-preview1.apk",
+        "sizeBytes": 13507358,
+        "sha256": "2fff5149dd521358022b2c77c5000d702b91eb02c414369231aa690b67e45c76",
         "minSdk": 26,
         "minAndroid": "8.0",
         "experimental": true,
         "notes": [
-          "在正式版 1.6.1 基础上，补充完整卡产品名与全球公开 BIN 离线参考数据。",
+          "承接开发版四套配色（松岚、墨檀、曜石、霁青，各含明暗两套）与两种实验证件入口。",
+          "保留完整卡产品名与全球公开 BIN 离线参考数据，并补正香港与境内外币卡 BIN。",
+          "同一卡号的多支付应用合并显示；设置页合并为“支持与隐私”；证件名称改用官方全称。",
           "八达通、澳门通、悠游卡、T-money、Suica、EZ-Link 六张实验卡均未在真实卡片上逐张验证，不承诺成功率。",
           "设置里的“检查更新”会同时查询官网、GitHub 与镜像站；只读取版本清单，不上传卡片数据。",
           "独立包名 com.superreader.app.preview，可与正式版共存；测试签名。"
         ]
       },
       "history": [
+        {
+          "versionName": "1.7.0-preview3",
+          "versionCode": 24,
+          "releasedAt": "2026-11-01T01:40:00+08:00",
+          "file": "downloads/SuperReader-1.7.0-preview3.apk",
+          "sizeBytes": 13507354,
+          "sha256": "a69be249b71a8487c40ed75b474b4a913f27b933e23d3820a7c2720e3532943b",
+          "minSdk": 26,
+          "minAndroid": "8.0",
+          "experimental": true,
+          "notes": [
+            "在正式版 1.6.1 基础上，补充完整卡产品名与全球公开 BIN 离线参考数据。",
+            "补正东莞银行（国际）、中信银行（国际）万事达卡，以及中信、广发、平安美国运通卡的发卡行；国内外币借记卡号段按公开资料核对。",
+            "同一卡号的多支付应用合并显示，美国运通同卡不再出现“储蓄卡 / 借记卡”两条。",
+            "设置页将“支持”与“隐私”合并为“支持与隐私”；证件名称改用官方全称。",
+            "八达通、澳门通、悠游卡、T-money、Suica、EZ-Link 六张实验卡均未在真实卡片上逐张验证，不承诺成功率。",
+            "设置里的“检查更新”会同时查询官网、GitHub 与镜像站；只读取版本清单，不上传卡片数据。",
+            "独立包名 com.superreader.app.preview，可与正式版共存；测试签名。"
+          ]
+        },
+        {
+          "versionName": "1.7.0-preview2",
+          "versionCode": 23,
+          "releasedAt": "2026-10-31T20:34:09+08:00",
+          "file": "downloads/SuperReader-1.7.0-preview2.apk",
+          "sizeBytes": 13506766,
+          "sha256": "c11c6d67239b4bd3b2cda250d95436e302ecf17d4cbac19386d0a8806f65e74d",
+          "minSdk": 26,
+          "minAndroid": "8.0",
+          "experimental": true,
+          "notes": [
+            "在正式版 1.6.1 基础上，补充完整卡产品名与全球公开 BIN 离线参考数据。",
+            "八达通、澳门通、悠游卡、T-money、Suica、EZ-Link 六张实验卡均未在真实卡片上逐张验证，不承诺成功率。",
+            "设置里的“检查更新”会同时查询官网、GitHub 与镜像站；只读取版本清单，不上传卡片数据。",
+            "独立包名 com.superreader.app.preview，可与正式版共存；测试签名。"
+          ]
+        },
         {
           "versionName": "1.7.0-preview1",
           "versionCode": 22,

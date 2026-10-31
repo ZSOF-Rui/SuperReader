@@ -2,32 +2,30 @@
 
 只读的 NFC 卡片信息工具。Android 版读取交通卡、PBOC / EMV 银行卡与 ICAO 电子证件；Windows 版通过 PC/SC 读卡器读取银行卡公开数据。读卡与解析都在本机完成，只有用户手动点击“检查更新”时，才通过 HTTPS 读取官网、GitHub 或镜像站的版本清单。
 
-- 官网：[superreader.828696.xyz](https://superreader.828696.xyz/)（需在 Cloudflare 配置 `CNAME superreader → zsof-rui.github.io` 后生效；在此之前请使用下面的 Pages 地址）
-- GitHub Pages 原始地址：[zsof-rui.github.io/SuperReader](https://zsof-rui.github.io/SuperReader/)（仓库已设置自定义域名，当前会 301 到尚未解析的官网域名）
+- 官网：[superreader.828696.xyz](https://superreader.828696.xyz/)
+- GitHub Pages 原始地址：[zsof-rui.github.io/SuperReader](https://zsof-rui.github.io/SuperReader/)（仓库已设置自定义域名，会跳转到官网域名）
 - 问题反馈：[Issues](https://github.com/ZSOF-Rui/SuperReader/issues)
 - 版本历史：[CHANGELOG.md](CHANGELOG.md)
 
-> 当前安装包均为**测试签名**，未上架应用商店，也不是银行或交通运营商的官方工具。六张实验卡、Windows 桌面版、卡产品名与全球 BIN 推断都还没有完成真实卡片验收。
-
-![卡阅 1.6.1 正式发布：贴近卡片即可读取并解析卡片信息](docs/images/release-1.6.1-banner.png)
+> 当前安装包均为**测试签名**，未上架应用商店，也不是银行或交通运营商的官方工具。六张实验卡、回乡证与台胞证实验入口、Windows 桌面版、卡产品名与全球 BIN 推断都还没有完成真实卡片验收。
 
 ## 下载
 
 | 渠道 | 版本 | 包名 | 下载 |
 | --- | --- | --- | --- |
-| Android 正式版 | 1.6.1 (14) | `com.superreader.app` | [SuperReader-1.6.1.apk](site/downloads/SuperReader-1.6.1.apk) |
-| Android 预览版 | 1.7.0-preview2 (23) | `com.superreader.app.preview` | [SuperReader-1.7.0-preview2.apk](site/downloads/SuperReader-1.7.0-preview2.apk) |
+| Android 正式版 | 1.7.0 (15) | `com.superreader.app` | [SuperReader-1.7.0.apk](site/downloads/SuperReader-1.7.0.apk) |
+| Android 预览版 | 1.8.0-preview1 (25) | `com.superreader.app.preview` | [SuperReader-1.8.0-preview1.apk](site/downloads/SuperReader-1.8.0-preview1.apk) |
 | Windows 测试版 | 1.1.0-preview2 | 免安装 zip | [SuperReader-Windows-1.1.0-preview2-r2.zip](site/downloads/SuperReader-Windows-1.1.0-preview2-r2.zip) |
 
-安装前请核对 SHA-256；方法见 [docs/VERIFY-RELEASES.md](docs/VERIFY-RELEASES.md)。正式版与预览版包名不同，可以同时安装；开发版 1.8.0-dev2 (24) 不对外发布。
+安装前请核对 SHA-256；方法见 [docs/VERIFY-RELEASES.md](docs/VERIFY-RELEASES.md)。正式版与预览版包名不同，可以同时安装；开发版 1.9.0-dev1 (27) 不对外发布。
 
 ### Android 版本差异
 
 | 版本 | 内容 |
 | --- | --- |
-| 正式版 1.6.1 | 交通联合、城市一卡通、PBOC / EMV 银行卡、电子护照与港澳台通行证；三家银行的卡产品名；六张实验卡 |
-| 预览版 1.7.0-preview2 | 在正式版基础上增加完整卡产品名（162 家银行、1,163 个号段）与全球 6 位 BIN 离线兜底 |
-| 开发版 1.8.0-dev2 | 四套配色、手机读卡桥接；暂未发布，计划迭代预览版 |
+| 正式版 1.7.0 | 交通联合、城市一卡通、PBOC / EMV 银行卡、电子护照与港澳台通行证；三家银行的卡产品名；六张实验卡；设置合并“支持与隐私”；通行证使用官方全称 |
+| 预览版 1.8.0-preview1 | 在正式版基础上增加松岚、墨檀、曜石、霁青四套配色，完整卡产品名（162 家银行、1,163 个号段）与全球 6 位 BIN 离线兜底，以及回乡证 / 台胞证实验入口 |
+| 开发版 1.9.0-dev1 | 在预览版基础上保留手机读卡桥接与开发标识；暂未发布 |
 
 ## 界面预览
 
@@ -38,13 +36,13 @@
   <img src="docs/images/app-settings.png" width="200" alt="设置页：版本信息与官网、GitHub、镜像三路检查更新">
 </p>
 
-截图来自 Android 模拟器，卡片、余额与交易均为**演示数据**，不是真实卡片的读取结果；六张实验卡、BIN 推断与 Windows 桌面版仍需真卡验收。
+截图来自 Android 模拟器，卡片、余额与交易均为**演示数据**，不是真实卡片的读取结果；六张实验卡、BIN 推断与 Windows 桌面版仍需真卡验收。1.6.1 发布时制作的[宣传海报](docs/images/release-1.6.1-poster.png)仍保留在仓库中，仅作历史资料。
 
 ## 能做什么
 
 - **交通卡**：交通联合、城市一卡通余额与交易记录；正式版与预览版另提供八达通、澳门通、悠游卡、T-money、Suica、EZ-Link 六张实验卡读取，开发版同样包含。
 - **银行卡**：PBOC / EMV 公开数据，卡号默认脱敏；离线 BIN 表只用于参考发卡行、卡种与卡产品名。
-- **电子证件**：电子护照与港澳台通行证公开字段、证件照；读取公开数据，不做签证、真伪或签发机构认证。
+- **电子证件**：电子护照与港澳台通行证公开字段、证件照；预览版与开发版另提供回乡证（CR 机读码）与台胞证（CT 机读码）实验入口。读取公开数据，不做签证、真伪或签发机构认证。
 - **本机保存**：历史、卡包、诊断导出都在应用私有目录，可随时清空。
 
 ## 不能做什么

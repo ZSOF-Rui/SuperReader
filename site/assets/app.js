@@ -211,7 +211,7 @@
 
     if (!raw || !Number.isInteger(currentCode) || currentCode < 1) {
       codeInput.setAttribute('aria-invalid', 'true');
-      renderResult('is-error', '请填写有效的 versionCode', 'versionCode 是 App「设置 → 检查更新」里括号中的整数，例如 1.6.1 (14) 里的 14。');
+      renderResult('is-error', '请填写有效的 versionCode', 'versionCode 是 App「设置 → 检查更新」里括号中的整数，例如 1.7.0 (15) 里的 15。');
       codeInput.focus();
       return;
     }
