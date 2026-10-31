@@ -88,8 +88,8 @@ node scripts/check-site.mjs
    | --- | --- | --- |
    | CNAME | `superreader` | `zsof-rui.github.io` |
 
-4. 在 Pages 设置中确认 Custom domain 为 `superreader.828696.xyz`，并启用 HTTPS。
-5. DNS 生效前，`https://zsof-rui.github.io/SuperReader/` 仍可访问；GitHub 清单路径不依赖自定义域名。
+4. 在 Pages 设置中确认 Custom domain 为 `superreader.828696.xyz`；DNS 生效后 GitHub 才能签发 HTTPS 证书，再启用 Enforce HTTPS。
+5. 设置自定义域名后，`https://zsof-rui.github.io/SuperReader/` 会 301 到 `https://superreader.828696.xyz/`；CNAME 生效前该地址无法打开。GitHub raw 清单路径不依赖自定义域名，但部分网络会阻断 `raw.githubusercontent.com`。
 
 ## 发布状态与限制
 
