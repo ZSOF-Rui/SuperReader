@@ -1,31 +1,45 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-10-31T19:54:44+08:00",
+  "updatedAt": "2026-10-31T20:34:09+08:00",
   "name": "卡阅 SuperReader",
-  "description": "Android NFC 只读卡片信息工具。应用只在用户手动“检查更新”时通过 HTTPS 读取官网与 GitHub 的版本清单，不上传卡片数据。本清单包含正式版与预览版两个通道。",
+  "description": "Android NFC 只读卡片信息工具。应用只在用户手动“检查更新”时通过 HTTPS 读取官网、GitHub 与镜像站的版本清单，不上传卡片数据。本清单包含正式版与预览版两个通道。",
   "channels": {
     "stable": {
       "label": "正式版",
       "packageName": "com.superreader.app",
       "channelNote": "稳定功能，公开下载默认推荐；六张实验卡仍是实验状态。",
       "latest": {
-        "versionName": "1.6.0",
-        "versionCode": 13,
-        "releasedAt": "2026-10-31T19:54:44+08:00",
-        "file": "downloads/SuperReader-1.6.0.apk",
-        "sizeBytes": 11840542,
-        "sha256": "10f4c9b6c276fdc8dcc6a9c3eb83ed9c7e3c92b11f74813a5c6e3ff9513960b7",
+        "versionName": "1.6.1",
+        "versionCode": 14,
+        "releasedAt": "2026-10-31T20:34:09+08:00",
+        "file": "downloads/SuperReader-1.6.1.apk",
+        "sizeBytes": 11837625,
+        "sha256": "90fed5aa6314c76478c86447bfb267ced0143a40871b5efedb826521e240fc0b",
         "minSdk": 26,
         "minAndroid": "8.0",
         "experimental": true,
         "notes": [
           "交通联合、城市一卡通、银联 / EMV 银行卡与电子证件读取。",
           "新增八达通、澳门通、悠游卡、T-money、Suica、EZ-Link 六张实验卡，均未在真实卡片上逐张验证，不承诺成功率。",
-          "设置里的“检查更新”会同时查询官网与 GitHub 的版本清单，手动触发，不上传卡片数据。",
+          "设置里的“检查更新”会同时查询官网、GitHub 与镜像站的版本清单，手动触发，不上传卡片数据。",
           "离线 BIN 推断发卡行、卡种与卡产品名，卡号默认脱敏；本地保存、历史记录与诊断导出。"
         ]
       },
       "history": [
+        {
+          "versionName": "1.6.0",
+          "versionCode": 13,
+          "releasedAt": "2026-10-31T19:54:44+08:00",
+          "file": "downloads/SuperReader-1.6.0.apk",
+          "sizeBytes": 11840542,
+          "sha256": "10f4c9b6c276fdc8dcc6a9c3eb83ed9c7e3c92b11f74813a5c6e3ff9513960b7",
+          "notes": [
+            "交通联合、城市一卡通、银联 / EMV 银行卡与电子证件读取。",
+            "新增八达通、澳门通、悠游卡、T-money、Suica、EZ-Link 六张实验卡，均未在真实卡片上逐张验证，不承诺成功率。",
+            "设置里的“检查更新”会同时查询官网与 GitHub 的版本清单，手动触发，不上传卡片数据。",
+            "离线 BIN 推断发卡行、卡种与卡产品名，卡号默认脱敏；本地保存、历史记录与诊断导出。"
+          ]
+        },
         {
           "versionName": "1.5.0",
           "versionCode": 9,
@@ -45,23 +59,37 @@
       "packageName": "com.superreader.app.preview",
       "channelNote": "实验功能，独立包名，测试签名；请先看实验卡说明。",
       "latest": {
-        "versionName": "1.7.0-preview1",
-        "versionCode": 22,
-        "releasedAt": "2026-10-31T19:54:44+08:00",
-        "file": "downloads/SuperReader-1.7.0-preview1.apk",
-        "sizeBytes": 13509679,
-        "sha256": "260f6d1d2375487ceecc790dbab38f62cc1e7ab7842c7c492e63d46bc2d30122",
+        "versionName": "1.7.0-preview2",
+        "versionCode": 23,
+        "releasedAt": "2026-10-31T20:34:09+08:00",
+        "file": "downloads/SuperReader-1.7.0-preview2.apk",
+        "sizeBytes": 13506766,
+        "sha256": "c11c6d67239b4bd3b2cda250d95436e302ecf17d4cbac19386d0a8806f65e74d",
         "minSdk": 26,
         "minAndroid": "8.0",
         "experimental": true,
         "notes": [
-          "在正式版 1.6.0 基础上，补充完整卡产品名与全球公开 BIN 离线参考数据。",
+          "在正式版 1.6.1 基础上，补充完整卡产品名与全球公开 BIN 离线参考数据。",
           "八达通、澳门通、悠游卡、T-money、Suica、EZ-Link 六张实验卡均未在真实卡片上逐张验证，不承诺成功率。",
-          "设置里的“检查更新”会同时查询官网与 GitHub；只读取版本清单，不上传卡片数据。",
+          "设置里的“检查更新”会同时查询官网、GitHub 与镜像站；只读取版本清单，不上传卡片数据。",
           "独立包名 com.superreader.app.preview，可与正式版共存；测试签名。"
         ]
       },
       "history": [
+        {
+          "versionName": "1.7.0-preview1",
+          "versionCode": 22,
+          "releasedAt": "2026-10-31T19:54:44+08:00",
+          "file": "downloads/SuperReader-1.7.0-preview1.apk",
+          "sizeBytes": 13509679,
+          "sha256": "260f6d1d2375487ceecc790dbab38f62cc1e7ab7842c7c492e63d46bc2d30122",
+          "notes": [
+            "在正式版 1.6.0 基础上，补充完整卡产品名与全球公开 BIN 离线参考数据。",
+            "八达通、澳门通、悠游卡、T-money、Suica、EZ-Link 六张实验卡均未在真实卡片上逐张验证，不承诺成功率。",
+            "设置里的“检查更新”会同时查询官网与 GitHub；只读取版本清单，不上传卡片数据。",
+            "独立包名 com.superreader.app.preview，可与正式版共存；测试签名。"
+          ]
+        },
         {
           "versionName": "1.6.0-preview1",
           "versionCode": 12,

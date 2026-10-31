@@ -22,8 +22,8 @@ body:
     id: version
     attributes:
       label: 版本
-      description: 例如 1.6.0 (13) 或 1.7.0-preview1 (22)
-      placeholder: 1.6.0 (13)
+      description: 例如 1.6.1 (14) 或 1.7.0-preview2 (23)
+      placeholder: 1.6.1 (14)
     validations:
       required: true
   - type: input

@@ -1,6 +1,6 @@
 # 卡阅 SuperReader
 
-只读的 NFC 卡片信息工具。Android 版读取交通卡、PBOC / EMV 银行卡与 ICAO 电子证件；Windows 版通过 PC/SC 读卡器读取银行卡公开数据。读卡与解析都在本机完成，只有用户手动点击“检查更新”时，才通过 HTTPS 读取官网或 GitHub 的版本清单。
+只读的 NFC 卡片信息工具。Android 版读取交通卡、PBOC / EMV 银行卡与 ICAO 电子证件；Windows 版通过 PC/SC 读卡器读取银行卡公开数据。读卡与解析都在本机完成，只有用户手动点击“检查更新”时，才通过 HTTPS 读取官网、GitHub 或镜像站的版本清单。
 
 - 官网：[superreader.828696.xyz](https://superreader.828696.xyz/)（需在 Cloudflare 配置 `CNAME superreader → zsof-rui.github.io` 后生效；在此之前请使用下面的 Pages 地址）
 - GitHub Pages 原始地址：[zsof-rui.github.io/SuperReader](https://zsof-rui.github.io/SuperReader/)（仓库已设置自定义域名，当前会 301 到尚未解析的官网域名）
@@ -13,19 +13,19 @@
 
 | 渠道 | 版本 | 包名 | 下载 |
 | --- | --- | --- | --- |
-| Android 正式版 | 1.6.0 (13) | `com.superreader.app` | [SuperReader-1.6.0.apk](site/downloads/SuperReader-1.6.0.apk) |
-| Android 预览版 | 1.7.0-preview1 (22) | `com.superreader.app.preview` | [SuperReader-1.7.0-preview1.apk](site/downloads/SuperReader-1.7.0-preview1.apk) |
+| Android 正式版 | 1.6.1 (14) | `com.superreader.app` | [SuperReader-1.6.1.apk](site/downloads/SuperReader-1.6.1.apk) |
+| Android 预览版 | 1.7.0-preview2 (23) | `com.superreader.app.preview` | [SuperReader-1.7.0-preview2.apk](site/downloads/SuperReader-1.7.0-preview2.apk) |
 | Windows 测试版 | 1.1.0-preview2 | 免安装 zip | [SuperReader-Windows-1.1.0-preview2-r2.zip](site/downloads/SuperReader-Windows-1.1.0-preview2-r2.zip) |
 
-安装前请核对 SHA-256；方法见 [docs/VERIFY-RELEASES.md](docs/VERIFY-RELEASES.md)。正式版与预览版包名不同，可以同时安装；开发版 1.8.0-dev1 不对外发布。
+安装前请核对 SHA-256；方法见 [docs/VERIFY-RELEASES.md](docs/VERIFY-RELEASES.md)。正式版与预览版包名不同，可以同时安装；开发版 1.8.0-dev2 (24) 不对外发布。
 
 ### Android 版本差异
 
 | 版本 | 内容 |
 | --- | --- |
-| 正式版 1.6.0 | 交通联合、城市一卡通、PBOC / EMV 银行卡、电子护照与港澳台通行证；三家银行的卡产品名；六张实验卡 |
-| 预览版 1.7.0-preview1 | 在正式版基础上增加完整卡产品名（162 家银行、1,163 个号段）与全球 6 位 BIN 离线兜底 |
-| 开发版 1.8.0-dev1 | 四套配色、手机读卡桥接；不对外发布 |
+| 正式版 1.6.1 | 交通联合、城市一卡通、PBOC / EMV 银行卡、电子护照与港澳台通行证；三家银行的卡产品名；六张实验卡 |
+| 预览版 1.7.0-preview2 | 在正式版基础上增加完整卡产品名（162 家银行、1,163 个号段）与全球 6 位 BIN 离线兜底 |
+| 开发版 1.8.0-dev2 | 四套配色、手机读卡桥接；不对外发布 |
 
 ## 能做什么
 
@@ -38,17 +38,18 @@
 
 - 不写卡、不克隆、不模拟、不圈存、不破解密钥。
 - 不上传卡号、BIN、证件信息或读卡结果；没有账号、统计、广告或崩溃上报。
-- 不自动检查更新；只有用户点击“检查更新”时才访问下面两个 HTTPS 地址。
+- 不自动检查更新；只有用户点击“检查更新”时才访问下面三个 HTTPS 地址。
 - 不保证实验卡、BIN 推断或余额解析的准确性；以卡面、银行与交通运营商官方信息为准。
 
 ## 更新检查
 
-“设置 → 检查更新”会并发查询两条路径，按版本号选择较新的正式版或预览版清单：
+“设置 → 检查更新”会并发查询三条路径，按版本号选择较新的正式版或预览版清单：
 
 1. 官网：`https://superreader.828696.xyz/data/releases.json`
 2. GitHub：`https://raw.githubusercontent.com/ZSOF-Rui/SuperReader/main/site/data/releases.json`
+3. 镜像站：`https://superreader-update-ch09cuq83vg.qoder.website/data/releases.json`
 
-两条路径使用同一份 `site/data/releases.json`，只读取版本号、下载地址、大小与 SHA-256，不上传任何设备或卡片数据。应用只接受 `https`，会校验包名、APK 相对路径、版本号与哈希格式；下载仍在浏览器中完成。清单格式和失败回退规则见 [docs/UPDATE-CHECK.md](docs/UPDATE-CHECK.md)。
+三处使用同一份 `site/data/releases.json`，只读取版本号、下载地址、大小与 SHA-256，不上传任何设备或卡片数据。任一来源失败时其余来源仍可完成检查；版本号相同时按官网、镜像站、GitHub 的顺序取下载地址。应用只接受 `https`，会校验包名、APK 相对路径、版本号与哈希格式；下载仍在浏览器中完成。清单格式和失败回退规则见 [docs/UPDATE-CHECK.md](docs/UPDATE-CHECK.md)。
 
 ## 仓库内容
 
@@ -58,7 +59,7 @@
 site/                 官网、下载页、版本清单、Web NFC 实验页
 docs/                 平台可行性、更新检查、安装包校验
 references/           公开协议与开源项目索引（仅链接与说明）
-scripts/check-site.mjs 站点链接、清单与安装包完整性检查
+scripts/               站点与镜像产物的链接、清单和安装包完整性检查
 .github/workflows/    GitHub Pages 与站点检查
 ```
 
@@ -85,6 +86,7 @@ node scripts/check-site.mjs
 3. 同步更新 `site/index.html` 中展示的版本、大小与 SHA-256。
 4. 运行 `node scripts/check-site.mjs`。
 5. 提交并推送；GitHub Actions 检查通过后部署 `site/` 到 Pages。
+6. 同步 `site/data/releases.json` 与最新两个 APK 到本地 `dist/qsite/`，重新发布镜像站（第三更新源，不超过 50 MiB）。
 
 详细步骤见 [site/README.md](site/README.md)。
 

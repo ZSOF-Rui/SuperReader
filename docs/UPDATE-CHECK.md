@@ -7,16 +7,17 @@
 - 只使用 HTTPS；应用 Manifest 中的 `INTERNET` 权限仅为该功能和开发版的局域网读卡桥接服务。
 - 下载在浏览器中完成，应用不静默安装 APK。
 
-## 两条路径
+## 三条路径
 
 | 来源 | 清单地址 | 下载根路径 |
 | --- | --- | --- |
 | 官网 | `https://superreader.828696.xyz/data/releases.json` | `https://superreader.828696.xyz/` |
 | GitHub | `https://raw.githubusercontent.com/ZSOF-Rui/SuperReader/main/site/data/releases.json` | `https://raw.githubusercontent.com/ZSOF-Rui/SuperReader/main/site/` |
+| 镜像站 | `https://superreader-update-ch09cuq83vg.qoder.website/data/releases.json` | `https://superreader-update-ch09cuq83vg.qoder.website/` |
 
-两条路径读取同一份 `site/data/releases.json`。应用并发请求，连接超时 8 秒、读取超时 10 秒，允许 HTTPS 重定向；任一来源成功即可返回结果，两个都失败才显示失败。
+三处读取同一份 `site/data/releases.json`。应用并发请求，连接超时 8 秒、读取超时 10 秒，允许 HTTPS 重定向；任一来源成功即可返回结果，三处都失败才显示失败。
 
-部分网络会阻断 `raw.githubusercontent.com`，此时 GitHub 路径可能返回连接错误，官网路径仍是主路径。应用会分别显示两个来源的状态，不会把“某一路失败”误报成“已是最新”。
+部分网络会阻断 `raw.githubusercontent.com`，此时 GitHub 路径可能返回连接错误；官网或镜像站仍可完成检查。应用会分别显示三个来源的状态，不会把“某一路失败”误报成“已是最新”。镜像站只保留最新两个安装包，旧版本下载仍以官网与 GitHub 为准。
 
 ## 清单格式
 
@@ -28,12 +29,12 @@
       "label": "正式版",
       "packageName": "com.superreader.app",
       "latest": {
-        "versionName": "1.6.0",
-        "versionCode": 13,
-        "releasedAt": "2026-10-31T19:54:44+08:00",
-        "file": "downloads/SuperReader-1.6.0.apk",
-        "sizeBytes": 11840542,
-        "sha256": "10f4c9b6c276fdc8dcc6a9c3eb83ed9c7e3c92b11f74813a5c6e3ff9513960b7",
+        "versionName": "1.6.1",
+        "versionCode": 14,
+        "releasedAt": "2026-10-31T20:34:09+08:00",
+        "file": "downloads/SuperReader-1.6.1.apk",
+        "sizeBytes": 11837625,
+        "sha256": "90fed5aa6314c76478c86447bfb267ced0143a40871b5efedb826521e240fc0b",
         "notes": ["…"]
       },
       "history": []
@@ -52,10 +53,10 @@
 
 ## 选择规则
 
-1. 两个来源都解析成功后，选择 `versionCode` 更大的版本。
-2. 版本号相同时优先官网，便于站点与 GitHub 内容短暂不一致时保持主站优先。
-3. 一个来源失败时使用另一个来源，并在对话框中显示每个来源的状态。
-4. 两个来源都失败或都没有当前渠道时显示“检查失败”，提供重试与官网下载入口。
+1. 多个来源都解析成功后，选择 `versionCode` 更大的版本。
+2. 版本号相同时按官网、镜像站、GitHub 的顺序取下载地址，便于站点内容短暂不一致时保持主站优先。
+3. 部分来源失败时使用其余来源，并在对话框中显示每个来源的状态。
+4. 三个来源都失败或都没有当前渠道时显示“检查失败”，提供重试与官网下载入口。
 5. 公开版本不高于当前版本时显示“已是最新”。
 
 ## 失败示例
@@ -64,8 +65,9 @@
 | --- | --- |
 | `官网：Unable to resolve host` | 自定义域名 DNS 未配置或当前网络无法解析 |
 | `GitHub：HTTP 404` | 仓库或 `main` 分支上的清单路径不存在 |
+| `镜像：HTTP 5xx` | 镜像站暂不可用，官网与 GitHub 仍可完成检查 |
 | `清单中没有可用的 stable 通道` | 清单可访问，但渠道或字段不合法 |
-| `检查失败` | 两个来源都没有返回可用版本 |
+| `检查失败` | 三个来源都没有返回可用版本 |
 
 ## 发布时同步
 
@@ -76,3 +78,5 @@
 3. `site/index.html` 展示的版本号、大小与 SHA-256。
 
 最后运行 `node scripts/check-site.mjs`。站点检查会拒绝大小或哈希不匹配的清单。
+
+镜像站是仓库之外的独立产物目录：把同一份 `releases.json` 与最新正式版、预览版 APK 复制进去，重新发布后再抽查远端清单与 APK 哈希。镜像只保留最新两个包，整体不超过 50 MiB。
