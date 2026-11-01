@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-01T01:45:00+08:00",
+  "updatedAt": "2026-11-01T10:56:20+08:00",
   "name": "卡阅 SuperReader",
   "description": "Android NFC 只读卡片信息工具。应用只在用户手动“检查更新”时通过 HTTPS 读取官网、GitHub 与镜像站的版本清单，不上传卡片数据。本清单包含正式版与预览版两个通道。",
   "channels": {
@@ -76,25 +76,44 @@
       "packageName": "com.superreader.app.preview",
       "channelNote": "实验功能，独立包名，测试签名；请先看实验卡说明。",
       "latest": {
-        "versionName": "1.8.0-preview1",
-        "versionCode": 25,
-        "releasedAt": "2026-11-01T01:45:00+08:00",
-        "file": "downloads/SuperReader-1.8.0-preview1.apk",
-        "sizeBytes": 13507358,
-        "sha256": "2fff5149dd521358022b2c77c5000d702b91eb02c414369231aa690b67e45c76",
+        "versionName": "1.8.0-preview2",
+        "versionCode": 26,
+        "releasedAt": "2026-11-01T10:56:20+08:00",
+        "file": "downloads/SuperReader-1.8.0-preview2.apk",
+        "sizeBytes": 13508914,
+        "sha256": "4a77563ce428d5df2b31298653277499fe0d36271b1534497279d0b61583aa7f",
         "minSdk": 26,
         "minAndroid": "8.0",
         "experimental": true,
         "notes": [
-          "承接开发版四套配色（松岚、墨檀、曜石、霁青，各含明暗两套）与两种实验证件入口。",
-          "保留完整卡产品名与全球公开 BIN 离线参考数据，并补正香港与境内外币卡 BIN。",
-          "同一卡号的多支付应用合并显示；设置页合并为“支持与隐私”；证件名称改用官方全称。",
+          "银行卡详情标题改为“发卡行 · 卡产品名 · 卡等级”（有数据时显示产品名与等级）；产品名与等级来自公开号段整理，仅供参考。",
+          "承接 163 家银行、1,215 个号段的卡产品名与等级数据补充；全球 6 位 BIN 兜底仍只在精选表未命中时使用。",
+          "同一卡号的多支付应用合并显示；补正香港与境内外币卡 BIN；六张实验卡与两种实验证件仍未真卡逐张验证。",
           "八达通、澳门通、悠游卡、T-money、Suica、EZ-Link 六张实验卡均未在真实卡片上逐张验证，不承诺成功率。",
           "设置里的“检查更新”会同时查询官网、GitHub 与镜像站；只读取版本清单，不上传卡片数据。",
           "独立包名 com.superreader.app.preview，可与正式版共存；测试签名。"
         ]
       },
       "history": [
+        {
+          "versionName": "1.8.0-preview1",
+          "versionCode": 25,
+          "releasedAt": "2026-11-01T01:45:00+08:00",
+          "file": "downloads/SuperReader-1.8.0-preview1.apk",
+          "sizeBytes": 13507358,
+          "sha256": "2fff5149dd521358022b2c77c5000d702b91eb02c414369231aa690b67e45c76",
+          "minSdk": 26,
+          "minAndroid": "8.0",
+          "experimental": true,
+          "notes": [
+            "承接开发版四套配色（松岚、墨檀、曜石、霁青，各含明暗两套）与两种实验证件入口。",
+            "保留完整卡产品名与全球公开 BIN 离线参考数据，并补正香港与境内外币卡 BIN。",
+            "同一卡号的多支付应用合并显示；设置页合并为“支持与隐私”；证件名称改用官方全称。",
+            "八达通、澳门通、悠游卡、T-money、Suica、EZ-Link 六张实验卡均未在真实卡片上逐张验证，不承诺成功率。",
+            "设置里的“检查更新”会同时查询官网、GitHub 与镜像站；只读取版本清单，不上传卡片数据。",
+            "独立包名 com.superreader.app.preview，可与正式版共存；测试签名。"
+          ]
+        },
         {
           "versionName": "1.7.0-preview3",
           "versionCode": 24,

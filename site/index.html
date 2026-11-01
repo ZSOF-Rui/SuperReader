@@ -189,7 +189,7 @@
     <header class="section-head">
       <p class="kicker">支持范围</p>
       <h2 id="cards-title">支持哪些卡片</h2>
-      <p>当前正式版 1.7.0 已加入交通联合、城市一卡通、银联 / EMV 银行卡、电子证件，以及八达通、澳门通、悠游卡、T-money、Suica、EZ-Link 六张实验卡。六张实验卡均未在真实卡片上逐张验证，不承诺成功率；预览版 1.8.0-preview1 在此基础上增加四套配色、回乡证与台胞证两项实验证件，并保留完整卡产品名与全球公开 BIN 参考数据。</p>
+      <p>当前正式版 1.7.0 已加入交通联合、城市一卡通、银联 / EMV 银行卡、电子证件，以及八达通、澳门通、悠游卡、T-money、Suica、EZ-Link 六张实验卡。六张实验卡均未在真实卡片上逐张验证，不承诺成功率；预览版 1.8.0-preview2 在此基础上增加四套配色、回乡证与台胞证两项实验证件，保留完整卡产品名与全球公开 BIN 参考数据，并让银行卡详情标题展示卡产品名与等级（有数据时）。</p>
     </header>
 
     <p class="table-hint">表格可左右滑动查看完整内容。</p>
@@ -282,20 +282,20 @@
     <div class="download-panel is-preview" data-channel="preview">
       <div class="download-main">
         <p class="channel-kicker">Android · 预览版</p>
-        <h3>卡阅 <span class="js-version">1.8.0-preview1</span></h3>
-        <p>在正式版 1.7.0 基础上，增加四套配色（8 组明暗）、回乡证与台胞证两项实验证件，并保留完整卡产品名与全球公开 BIN 离线参考数据。仍是只读，不写卡、不上传。</p>
+        <h3>卡阅 <span class="js-version">1.8.0-preview2</span></h3>
+        <p>在正式版 1.7.0 基础上，增加四套配色（8 组明暗）、回乡证与台胞证两项实验证件，保留完整卡产品名与全球公开 BIN 离线参考数据；银行卡详情标题会显示卡产品名与等级（有数据时）。仍是只读，不写卡、不上传。</p>
         <dl class="download-meta">
-          <div><dt>versionCode</dt><dd class="js-code">25</dd></div>
+          <div><dt>versionCode</dt><dd class="js-code">26</dd></div>
           <div><dt>包名</dt><dd><code class="js-package">com.superreader.app.preview</code></dd></div>
           <div><dt>大小</dt><dd class="js-size">12.9 MB</dd></div>
           <div><dt>更新日期</dt><dd class="js-date">2026-11-01</dd></div>
           <div><dt>要求</dt><dd>Android 8.0+</dd></div>
         </dl>
         <div class="download-actions">
-          <a class="btn btn-primary js-download" href="downloads/SuperReader-1.8.0-preview1.apk" download>下载预览版 APK</a>
-          <button class="btn btn-quiet copy-sha" type="button" data-sha="2fff5149dd521358022b2c77c5000d702b91eb02c414369231aa690b67e45c76">复制 SHA-256</button>
+          <a class="btn btn-primary js-download" href="downloads/SuperReader-1.8.0-preview2.apk" download>下载预览版 APK</a>
+          <button class="btn btn-quiet copy-sha" type="button" data-sha="4a77563ce428d5df2b31298653277499fe0d36271b1534497279d0b61583aa7f">复制 SHA-256</button>
         </div>
-        <p class="sha-line"><span>SHA-256</span><code class="js-sha">2fff5149dd521358022b2c77c5000d702b91eb02c414369231aa690b67e45c76</code></p>
+        <p class="sha-line"><span>SHA-256</span><code class="js-sha">4a77563ce428d5df2b31298653277499fe0d36271b1534497279d0b61583aa7f</code></p>
       </div>
       <aside class="download-side">
         <h4>预览版须知</h4>
@@ -350,7 +350,7 @@
 Get-FileHash .\SuperReader-Windows-1.1.0-preview2-r2.zip -Algorithm SHA256</code></pre>
         <p><strong>macOS / Linux</strong></p>
         <pre><code>shasum -a 256 SuperReader-1.7.0.apk</code></pre>
-        <p>预览版把文件名换成 <code>SuperReader-1.8.0-preview1.apk</code>。Android 包均为测试签名，Windows 包没有代码签名，均未上架应用商店。安装时系统可能提示“未知来源”或“未知发布者”，这是正常现象；请只从本页或项目 Release 下载。</p>
+        <p>预览版把文件名换成 <code>SuperReader-1.8.0-preview2.apk</code>。Android 包均为测试签名，Windows 包没有代码签名，均未上架应用商店。安装时系统可能提示“未知来源”或“未知发布者”，这是正常现象；请只从本页或项目 Release 下载。</p>
       </div>
     </details>
   </div>
@@ -384,7 +384,7 @@ Get-FileHash .\SuperReader-Windows-1.1.0-preview2-r2.zip -Algorithm SHA256</code
           <input id="current-code" name="currentCode" type="number" min="1" step="1" inputmode="numeric" value="15" required>
           <p class="field-hint">只填数字，例如 1.7.0 (15) 里的 15。</p>
         </div>
-        <p class="channel-hint" id="channel-hint">正式版最新：1.7.0 (15) · 预览版最新：1.8.0-preview1 (25)</p>
+        <p class="channel-hint" id="channel-hint">正式版最新：1.7.0 (15) · 预览版最新：1.8.0-preview2 (26)</p>
         <button class="btn btn-primary btn-block" type="submit" id="update-submit">检查更新</button>
       </form>
       <div class="update-result" id="update-result" role="status" aria-live="polite">
@@ -400,7 +400,7 @@ Get-FileHash .\SuperReader-Windows-1.1.0-preview2-r2.zip -Algorithm SHA256</code
     <header class="section-head">
       <p class="kicker">开发进展</p>
       <h2 id="roadmap-title">正在测试的新东西</h2>
-      <p>正式版已更新到 <strong>1.7.0</strong>，六张实验卡随正式版发布，但仍会明确标注“实验、未真卡逐张验证”。预览版 <strong>1.8.0-preview1</strong> 增加四套配色、回乡证与台胞证两项实验证件，并保留完整卡产品名与全球公开 BIN 参考数据；开发版 <strong>1.9.0-dev1</strong> 继续验证手机读卡桥接。</p>
+      <p>正式版已更新到 <strong>1.7.0</strong>，六张实验卡随正式版发布，但仍会明确标注“实验、未真卡逐张验证”。预览版 <strong>1.8.0-preview2</strong> 增加四套配色、回乡证与台胞证两项实验证件，保留完整卡产品名与全球公开 BIN 参考数据，并在银行卡详情标题显示卡产品名与等级（有数据时）；开发版 <strong>1.9.0-dev2</strong> 继续验证手机读卡桥接。</p>
     </header>
 
     <div class="roadmap-grid">
@@ -408,7 +408,7 @@ Get-FileHash .\SuperReader-Windows-1.1.0-preview2-r2.zip -Algorithm SHA256</code
         <div class="roadmap-top"><span class="roadmap-no">01</span><span class="badge badge-internal">预览版已包含</span></div>
         <h3>四套配色，收进设置菜单</h3>
         <p>预览版与开发版提供松岚、墨檀、曜石、霁青四套配色，每套都有浅色与深色，共 8 组。主题只改变颜色，不改字体、圆角与页面结构；入口收在外观设置里，不占用设置页顶部空间。</p>
-        <p class="tag-line"><span>1.8.0-preview1</span><span>8 组配色</span><span>设置内切换</span></p>
+        <p class="tag-line"><span>1.8.0-preview2</span><span>8 组配色</span><span>设置内切换</span></p>
         <a class="roadmap-link" href="#download">下载预览版 <span aria-hidden="true">→</span></a>
       </article>
 
@@ -421,7 +421,7 @@ Get-FileHash .\SuperReader-Windows-1.1.0-preview2-r2.zip -Algorithm SHA256</code
       </article>
     </div>
 
-    <p class="roadmap-note">开发版 <code>1.9.0-dev1</code> 仍只用于内部核验，不写入 <code>releases.json</code>；预览版 <code>1.8.0-preview1</code> 已加入版本清单，可在上方下载。六张实验卡与两项实验证件尚未完成真卡逐张验证，正式版与预览版都不会把它们写成“已支持”。</p>
+    <p class="roadmap-note">开发版 <code>1.9.0-dev2</code> 仍只用于内部核验，不写入 <code>releases.json</code>；预览版 <code>1.8.0-preview2</code> 已加入版本清单，可在上方下载。六张实验卡与两项实验证件尚未完成真卡逐张验证，正式版与预览版都不会把它们写成“已支持”。</p>
   </div>
 </section>
 
@@ -455,7 +455,7 @@ Get-FileHash .\SuperReader-Windows-1.1.0-preview2-r2.zip -Algorithm SHA256</code
       </details>
       <details>
         <summary>预览版和开发版有什么区别？</summary>
-        <p>正式版 1.7.0 已包含六张实验卡，并把设置入口合并为「支持与隐私」；预览版 1.8.0-preview1 在此基础上增加四套配色、回乡证与台胞证两项实验证件，以及完整卡产品名与全球公开 BIN 参考数据，使用独立包名，可与正式版共存。开发版 1.9.0-dev1 继续验证手机读卡桥接，只用于内部核验，不公开分发。实验卡与两项实验证件都尚未真卡逐张验证。</p>
+        <p>正式版 1.7.0 已包含六张实验卡，并把设置入口合并为「支持与隐私」；预览版 1.8.0-preview2 在此基础上增加四套配色、回乡证与台胞证两项实验证件，以及完整卡产品名与全球公开 BIN 参考数据，并让银行卡详情标题展示卡产品名与等级（有数据时），使用独立包名，可与正式版共存。开发版 1.9.0-dev2 继续验证手机读卡桥接，只用于内部核验，不公开分发。实验卡与两项实验证件都尚未真卡逐张验证。</p>
       </details>
       <details>
         <summary>安装时提示“未知来源”或签名冲突怎么办？</summary>

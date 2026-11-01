@@ -33,7 +33,7 @@ certutil -hashfile SuperReader-1.7.0.apk SHA256
 | 文件 | 大小 | SHA-256 |
 | --- | --- | --- |
 | `SuperReader-1.7.0.apk` | 11,838,213 字节 | `7674aa73d41801ce614d8fca97f34b6074d68aa1a7b1e03a09c4687b6fd46568` |
-| `SuperReader-1.8.0-preview1.apk` | 13,507,358 字节 | `2fff5149dd521358022b2c77c5000d702b91eb02c414369231aa690b67e45c76` |
+| `SuperReader-1.8.0-preview2.apk` | 13,508,914 字节 | `4a77563ce428d5df2b31298653277499fe0d36271b1534497279d0b61583aa7f` |
 | `SuperReader-Windows-1.1.0-preview2-r2.zip` | 23,709,516 字节 | `8021fd016e19af19b9a3bd3c2ac88534f44206449e65b8e5e701c95b1dd6c20e` |
 
 以 `site/data/releases.json` 与 GitHub Release 附带的 `SHA256SUMS` 为准。
@@ -49,7 +49,7 @@ aapt dump badging SuperReader-1.7.0.apk | head -5
 应看到：
 
 - 正式版：`package: name='com.superreader.app' versionCode='15' versionName='1.7.0'`
-- 预览版：`package: name='com.superreader.app.preview' versionCode='25' versionName='1.8.0-preview1'`
+- 预览版：`package: name='com.superreader.app.preview' versionCode='26' versionName='1.8.0-preview2'`
 
 ## 签名
 
