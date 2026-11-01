@@ -29,12 +29,12 @@
       "label": "正式版",
       "packageName": "com.superreader.app",
       "latest": {
-        "versionName": "1.7.0",
-        "versionCode": 15,
-        "releasedAt": "2026-11-01T01:45:00+08:00",
-        "file": "downloads/SuperReader-1.7.0.apk",
-        "sizeBytes": 11838213,
-        "sha256": "7674aa73d41801ce614d8fca97f34b6074d68aa1a7b1e03a09c4687b6fd46568",
+        "versionName": "1.7.1",
+        "versionCode": 16,
+        "releasedAt": "2026-11-01T14:31:51+08:00",
+        "file": "downloads/SuperReader-1.7.1.apk",
+        "sizeBytes": 11839137,
+        "sha256": "9b25e037360a8f0258901302e37c5b12db00861252324aa4b7b94018ca436269",
         "notes": ["…"]
       },
       "history": []

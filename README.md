@@ -13,19 +13,19 @@
 
 | 渠道 | 版本 | 包名 | 下载 |
 | --- | --- | --- | --- |
-| Android 正式版 | 1.7.0 (15) | `com.superreader.app` | [SuperReader-1.7.0.apk](site/downloads/SuperReader-1.7.0.apk) |
-| Android 预览版 | 1.8.0-preview2 (26) | `com.superreader.app.preview` | [SuperReader-1.8.0-preview2.apk](site/downloads/SuperReader-1.8.0-preview2.apk) |
+| Android 正式版 | 1.7.1 (16) | `com.superreader.app` | [SuperReader-1.7.1.apk](site/downloads/SuperReader-1.7.1.apk) |
+| Android 预览版 | 1.8.0-preview3 (27) | `com.superreader.app.preview` | [SuperReader-1.8.0-preview3.apk](site/downloads/SuperReader-1.8.0-preview3.apk) |
 | Windows 测试版 | 1.1.0-preview2 | 免安装 zip | [SuperReader-Windows-1.1.0-preview2-r2.zip](site/downloads/SuperReader-Windows-1.1.0-preview2-r2.zip) |
 
-安装前请核对 SHA-256；方法见 [docs/VERIFY-RELEASES.md](docs/VERIFY-RELEASES.md)。正式版与预览版包名不同，可以同时安装；开发版 1.9.0-dev2 (28) 不对外发布。
+安装前请核对 SHA-256；方法见 [docs/VERIFY-RELEASES.md](docs/VERIFY-RELEASES.md)。正式版与预览版包名不同，可以同时安装；开发版 1.9.0-dev3 (29) 不对外发布。
 
 ### Android 版本差异
 
 | 版本 | 内容 |
 | --- | --- |
-| 正式版 1.7.0 | 交通联合、城市一卡通、PBOC / EMV 银行卡、电子护照与港澳台通行证；三家银行的卡产品名；六张实验卡；设置合并“支持与隐私”；通行证使用官方全称 |
-| 预览版 1.8.0-preview2 | 在正式版基础上增加松岚、墨檀、曜石、霁青四套配色，完整卡产品名与等级（163 家银行、1,215 个号段）、全球 6 位 BIN 离线兜底，以及回乡证 / 台胞证实验入口；银行卡结果标题显示“发卡行 · 卡产品名 · 卡等级”（有数据时） |
-| 开发版 1.9.0-dev2 | 在预览版基础上保留手机读卡桥接与开发标识；暂未发布 |
+| 正式版 1.7.1 | 交通联合、城市一卡通、PBOC / EMV 银行卡、电子护照与港澳台通行证；三家银行的卡产品名；六张实验卡；保存后可自定义卡名称并在结果页标题优先显示；设置合并“支持与隐私”；通行证使用官方全称 |
+| 预览版 1.8.0-preview3 | 在正式版基础上增加松岚、墨檀、曜石、霁青四套配色，完整卡产品名与等级（163 家银行、1,215 个号段）、全球 6 位 BIN 离线兜底，以及回乡证 / 台胞证实验入口；银行卡结果标题显示“发卡行 · 卡产品名 · 卡等级”（有数据时）；同样支持自定义卡名称 |
+| 开发版 1.9.0-dev3 | 在预览版基础上保留手机读卡桥接与开发标识；暂未发布 |
 
 ## 界面预览
 
@@ -43,7 +43,7 @@
 - **交通卡**：交通联合、城市一卡通余额与交易记录；正式版与预览版另提供八达通、澳门通、悠游卡、T-money、Suica、EZ-Link 六张实验卡读取，开发版同样包含。
 - **银行卡**：PBOC / EMV 公开数据，卡号默认脱敏；离线 BIN 表只用于参考发卡行、卡种与卡产品名。
 - **电子证件**：电子护照与港澳台通行证公开字段、证件照；预览版与开发版另提供回乡证（CR 机读码）与台胞证（CT 机读码）实验入口。读取公开数据，不做签证、真伪或签发机构认证。
-- **本机保存**：历史、卡包、诊断导出都在应用私有目录，可随时清空。
+- **本机保存**：历史、卡包、诊断导出都在应用私有目录；保存时可自定义卡名称，结果页标题优先显示自定义名，原卡片名作为副标题；可随时清空。
 
 ## 不能做什么
 
