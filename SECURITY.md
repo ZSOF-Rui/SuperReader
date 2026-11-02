@@ -6,8 +6,8 @@
 
 | 渠道 | 版本 |
 | --- | --- |
-| Android 正式版 | 1.7.1 |
-| Android 预览版 | 1.8.0-preview3 |
+| Android 正式版 | 1.7.2 |
+| Android 预览版 | 1.8.0-preview7 |
 | Windows 测试版 | 1.1.0-preview2 |
 
 更早版本不再单独修复；请先升级到最新版本再复现。

@@ -7,33 +7,33 @@
 Linux：
 
 ```bash
-sha256sum SuperReader-1.7.1.apk
+sha256sum SuperReader-1.7.2.apk
 ```
 
 macOS：
 
 ```bash
-shasum -a 256 SuperReader-1.7.1.apk
+shasum -a 256 SuperReader-1.7.2.apk
 ```
 
 Windows PowerShell：
 
 ```powershell
-Get-FileHash .\SuperReader-1.7.1.apk -Algorithm SHA256
+Get-FileHash .\SuperReader-1.7.2.apk -Algorithm SHA256
 ```
 
 Windows CMD：
 
 ```bat
-certutil -hashfile SuperReader-1.7.1.apk SHA256
+certutil -hashfile SuperReader-1.7.2.apk SHA256
 ```
 
 当前正式版与预览版：
 
 | 文件 | 大小 | SHA-256 |
 | --- | --- | --- |
-| `SuperReader-1.7.1.apk` | 11,839,137 字节 | `9b25e037360a8f0258901302e37c5b12db00861252324aa4b7b94018ca436269` |
-| `SuperReader-1.8.0-preview3.apk` | 13,508,918 字节 | `211e1fe26f2845a23f87466b2a69829cf1d7fc38e31f5bf2b0f8a355eb26d604` |
+| `SuperReader-1.7.2.apk` | 11,970,209 字节 | `3a4fda823a07afec7103ec792895102bc4c6e0820706b4a711e0004763ffc14d` |
+| `SuperReader-1.8.0-preview7.apk` | 13,639,990 字节 | `28ccd164c3cf248d6b9ae86a46055fcb61aaef67fd1f8c72ba5deaf21ff1707c` |
 | `SuperReader-Windows-1.1.0-preview2-r2.zip` | 23,709,516 字节 | `8021fd016e19af19b9a3bd3c2ac88534f44206449e65b8e5e701c95b1dd6c20e` |
 
 以 `site/data/releases.json` 与 GitHub Release 附带的 `SHA256SUMS` 为准。
@@ -43,20 +43,20 @@ certutil -hashfile SuperReader-1.7.1.apk SHA256
 使用 Android SDK build-tools：
 
 ```bash
-aapt dump badging SuperReader-1.7.1.apk | head -5
+aapt dump badging SuperReader-1.7.2.apk | head -5
 ```
 
 应看到：
 
-- 正式版：`package: name='com.superreader.app' versionCode='16' versionName='1.7.1'`
-- 预览版：`package: name='com.superreader.app.preview' versionCode='27' versionName='1.8.0-preview3'`
+- 正式版：`package: name='com.superreader.app' versionCode='17' versionName='1.7.2'`
+- 预览版：`package: name='com.superreader.app.preview' versionCode='31' versionName='1.8.0-preview7'`
 
 ## 签名
 
 当前所有 Android 包都是**测试签名**，不是生产签名：
 
 ```bash
-apksigner verify --print-certs SuperReader-1.7.1.apk
+apksigner verify --print-certs SuperReader-1.7.2.apk
 ```
 
 证书主体应为 `CN=Android Debug`。如果你从其他渠道拿到签名不同的包，不要安装。

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-11-01T14:31:51+08:00",
+  "updatedAt": "2026-11-02T13:45:07+08:00",
   "name": "卡阅 SuperReader",
   "description": "Android NFC 只读卡片信息工具。应用只在用户手动“检查更新”时通过 HTTPS 读取官网、GitHub 与镜像站的版本清单，不上传卡片数据。本清单包含正式版与预览版两个通道。",
   "channels": {
@@ -9,24 +9,43 @@
       "packageName": "com.superreader.app",
       "channelNote": "稳定功能，公开下载默认推荐；六张实验卡仍是实验状态。",
       "latest": {
-        "versionName": "1.7.1",
-        "versionCode": 16,
-        "releasedAt": "2026-11-01T14:31:51+08:00",
-        "file": "downloads/SuperReader-1.7.1.apk",
-        "sizeBytes": 11839137,
-        "sha256": "9b25e037360a8f0258901302e37c5b12db00861252324aa4b7b94018ca436269",
+        "versionName": "1.7.2",
+        "versionCode": 17,
+        "releasedAt": "2026-11-02T13:45:07+08:00",
+        "file": "downloads/SuperReader-1.7.2.apk",
+        "sizeBytes": 11970209,
+        "sha256": "3a4fda823a07afec7103ec792895102bc4c6e0820706b4a711e0004763ffc14d",
         "minSdk": 26,
         "minAndroid": "8.0",
         "experimental": true,
         "notes": [
+          "新增 ICOCA / PASMO 与 NETS FlashPay 识别；单标交通卡按公开 DF 探测，门禁 / 校园 / 会员卡只显示源数据。",
+          "新增全球公开卡种目录与公开密钥库（仅公开规范与出厂默认值，不破解专有密钥），未命中解析的卡只展示原始数据。",
+          "修正 MIFARE MAD 目录、CRC 与 GPB 解析；SAK 0x28 双接口卡支持 MIFARE 兼容区只读回退。",
           "保存卡片后可自定义名称；结果页标题显示自定义名，原卡片名作为副标题，改名后立即同步。",
           "银行卡详情标题展示“发卡行 · 卡产品名 · 卡等级”（有数据时）；产品名与等级来自公开号段整理，仅供参考。",
-          "交通联合、城市一卡通、银联 / EMV 银行卡与电子证件读取；六张实验卡仍是实验状态，未真卡逐张验证。",
-          "同一卡号的多支付应用合并显示；补正香港与境内外币卡 BIN，国内交易仍为离线推断。",
           "设置里的“检查更新”会同时查询官网、GitHub 与镜像站；只读取版本清单，不上传卡片数据。"
         ]
       },
       "history": [
+        {
+          "versionName": "1.7.1",
+          "versionCode": 16,
+          "releasedAt": "2026-11-01T14:31:51+08:00",
+          "file": "downloads/SuperReader-1.7.1.apk",
+          "sizeBytes": 11839137,
+          "sha256": "9b25e037360a8f0258901302e37c5b12db00861252324aa4b7b94018ca436269",
+          "minSdk": 26,
+          "minAndroid": "8.0",
+          "experimental": true,
+          "notes": [
+            "保存卡片后可自定义名称；结果页标题显示自定义名，原卡片名作为副标题，改名后立即同步。",
+            "银行卡详情标题展示“发卡行 · 卡产品名 · 卡等级”（有数据时）；产品名与等级来自公开号段整理，仅供参考。",
+            "交通联合、城市一卡通、银联 / EMV 银行卡与电子证件读取；六张实验卡仍是实验状态，未真卡逐张验证。",
+            "同一卡号的多支付应用合并显示；补正香港与境内外币卡 BIN，国内交易仍为离线推断。",
+            "设置里的“检查更新”会同时查询官网、GitHub 与镜像站；只读取版本清单，不上传卡片数据。"
+          ]
+        },
         {
           "versionName": "1.7.0",
           "versionCode": 15,
@@ -94,26 +113,48 @@
       "packageName": "com.superreader.app.preview",
       "channelNote": "实验功能，独立包名，测试签名；请先看实验卡说明。",
       "latest": {
-        "versionName": "1.8.0-preview3",
-        "versionCode": 27,
-        "releasedAt": "2026-11-01T14:31:51+08:00",
-        "file": "downloads/SuperReader-1.8.0-preview3.apk",
-        "sizeBytes": 13508918,
-        "sha256": "211e1fe26f2845a23f87466b2a69829cf1d7fc38e31f5bf2b0f8a355eb26d604",
+        "versionName": "1.8.0-preview7",
+        "versionCode": 31,
+        "releasedAt": "2026-11-02T13:45:07+08:00",
+        "file": "downloads/SuperReader-1.8.0-preview7.apk",
+        "sizeBytes": 13639990,
+        "sha256": "28ccd164c3cf248d6b9ae86a46055fcb61aaef67fd1f8c72ba5deaf21ff1707c",
         "minSdk": 26,
         "minAndroid": "8.0",
         "experimental": true,
         "notes": [
+          "新增 ICOCA / PASMO 与 NETS FlashPay 识别；单标交通卡按公开 DF 探测，门禁 / 校园 / 会员卡只显示源数据。",
+          "新增全球公开卡种目录与公开密钥库（仅公开规范与出厂默认值，不破解专有密钥），未命中解析的卡只展示原始数据。",
+          "修正 MIFARE MAD 目录、CRC 与 GPB 解析；SAK 0x28 双接口卡支持 MIFARE 兼容区只读回退。",
           "保存卡片后可自定义名称；结果页标题显示自定义名，原卡片名作为副标题，改名后立即同步。",
-          "银行卡详情标题展示“发卡行 · 卡产品名 · 卡等级”（有数据时）；产品名与等级来自公开号段整理，仅供参考。",
-          "承接 163 家银行、1,215 个号段的卡产品名与等级数据补充；全球 6 位 BIN 兜底仍只在精选表未命中时使用。",
+          "银行卡详情标题展示“发卡行 · 卡产品名 · 卡等级”（有数据时）；163 家银行、1,215 个号段产品名与等级来自公开号段整理，仅供参考。",
           "同一卡号的多支付应用合并显示；补正香港与境内外币卡 BIN；六张实验卡与两种实验证件仍未真卡逐张验证。",
-          "八达通、澳门通、悠游卡、T-money、Suica、EZ-Link 六张实验卡均未在真实卡片上逐张验证，不承诺成功率。",
+          "四套配色（8 组明暗）与回乡证 / 台胞证两项实验证件继续保留。",
           "设置里的“检查更新”会同时查询官网、GitHub 与镜像站；只读取版本清单，不上传卡片数据。",
           "独立包名 com.superreader.app.preview，可与正式版共存；测试签名。"
         ]
       },
       "history": [
+        {
+          "versionName": "1.8.0-preview3",
+          "versionCode": 27,
+          "releasedAt": "2026-11-01T14:31:51+08:00",
+          "file": "downloads/SuperReader-1.8.0-preview3.apk",
+          "sizeBytes": 13508918,
+          "sha256": "211e1fe26f2845a23f87466b2a69829cf1d7fc38e31f5bf2b0f8a355eb26d604",
+          "minSdk": 26,
+          "minAndroid": "8.0",
+          "experimental": true,
+          "notes": [
+            "保存卡片后可自定义名称；结果页标题显示自定义名，原卡片名作为副标题，改名后立即同步。",
+            "银行卡详情标题展示“发卡行 · 卡产品名 · 卡等级”（有数据时）；产品名与等级来自公开号段整理，仅供参考。",
+            "承接 163 家银行、1,215 个号段的卡产品名与等级数据补充；全球 6 位 BIN 兜底仍只在精选表未命中时使用。",
+            "同一卡号的多支付应用合并显示；补正香港与境内外币卡 BIN；六张实验卡与两种实验证件仍未真卡逐张验证。",
+            "八达通、澳门通、悠游卡、T-money、Suica、EZ-Link 六张实验卡均未在真实卡片上逐张验证，不承诺成功率。",
+            "设置里的“检查更新”会同时查询官网、GitHub 与镜像站；只读取版本清单，不上传卡片数据。",
+            "独立包名 com.superreader.app.preview，可与正式版共存；测试签名。"
+          ]
+        },
         {
           "versionName": "1.8.0-preview2",
           "versionCode": 26,
