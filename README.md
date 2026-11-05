@@ -1,6 +1,6 @@
 # 卡阅 SuperReader
 
-只读的 NFC 卡片信息工具。Android 版读取交通卡、PBOC / EMV 银行卡与 ICAO 电子证件；Windows 版通过 PC/SC 读卡器读取银行卡公开数据。读卡与解析都在本机完成，只有用户手动点击“检查更新”时，才通过 HTTPS 读取官网、GitHub 或镜像站的版本清单。
+只读的 NFC 卡片信息工具。Android 版读取交通卡、PBOC / EMV 银行卡与 ICAO 电子证件；Windows 版通过 PC/SC 读卡器读取银行卡公开数据。读卡与解析都在本机完成，只有启动后自动检查一次或用户手动点击“检查更新”时，才通过 HTTPS 读取官网、GitHub 或镜像站的版本清单。
 
 - 官网：[superreader.828696.xyz](https://superreader.828696.xyz/)
 - GitHub Pages 原始地址：[zsof-rui.github.io/SuperReader](https://zsof-rui.github.io/SuperReader/)（仓库已设置自定义域名，会跳转到官网域名）
@@ -23,7 +23,7 @@
 
 | 版本 | 内容 |
 | --- | --- |
-| 正式版 1.9.0 | 交通联合、城市一卡通、PBOC / EMV 银行卡、电子护照与港澳台通行证；六张实验卡；全球公开卡种目录与公开密钥库、ICOCA / PASMO 与 NETS FlashPay 识别、MIFARE MAD 修正与 SAK 0x28 卡的 MIFARE 兼容区只读回退；四套配色（8 组明暗）、回乡证 / 台胞证实验入口、163 家银行产品名与等级、全球 6 位 BIN 离线兜底；交通卡线路与站点按乘车城市匹配，并支持常州地铁终端取位；换乘 / 免费换乘 / 异地用卡 / 清晨 / 夜间推断标记覆盖所有交通卡记录，异地用卡也覆盖出租与小额消费；本版起提供本机 MIFARE Classic 密钥导入（最多 32 把，只存本机、掩码显示、不做字典爆破）；启动后自动检查更新；保存后可自定义卡名称 |
+| 正式版 1.9.0 | 交通联合、城市一卡通、PBOC / EMV 银行卡、电子护照与港澳台通行证；六张实验卡；全球公开卡种目录与公开密钥库、ICOCA / PASMO 与 NETS FlashPay 识别、MIFARE MAD 修正与 SAK 0x28 卡的 MIFARE 兼容区只读回退；四套配色（8 组明暗）、回乡证 / 台胞证实验入口、163 家银行产品名与等级、全球 6 位 BIN 离线兜底；交通卡线路与站点按乘车城市匹配，并支持常州地铁终端取位；换乘 / 免费换乘 / 异地用卡 / 清晨 / 夜间推断标记覆盖所有交通卡记录，异地用卡也覆盖出租与小额消费；本版起提供本机 MIFARE Classic 密钥导入（最多 32 把，只存本机、掩码显示、不做字典爆破）；启动后自动检查更新，同版本号的新构建也能识别；保存后可自定义卡名称 |
 | 预览版 1.9.0-preview6 | 在正式版基础上保留手机读卡桥接（只监听本机局域网、只传脱敏诊断文本）与开发设置项；独立包名，可与正式版共存 |
 | 开发版 1.9.0-dev13 | 与预览版同源，用于内部核验；暂未发布 |
 
@@ -49,18 +49,18 @@
 
 - 不写卡、不克隆、不模拟、不圈存、不破解密钥：不做字典爆破，也不猜未提供的密钥；用户导入的密钥只用于读取自己的卡。
 - 不上传卡号、BIN、证件信息或读卡结果；没有账号、统计、广告或崩溃上报。
-- 更新检查只在启动后自动进行一次、或用户点击“检查更新”时访问下面三个 HTTPS 地址；只读取版本清单，同一版本不重复提示，也没有后台轮询。
+- 更新检查只在启动后自动进行一次、或用户点击“检查更新”时访问下面三个 HTTPS 地址；只读取版本清单，同一个构建不重复提示，也没有后台轮询。版本号相同时按 `buildId` 与 `builtAt` 判断是否有新构建。
 - 不保证实验卡、BIN 推断或余额解析的准确性；以卡面、银行与交通运营商官方信息为准。
 
 ## 更新检查
 
-应用启动后会静默检查一次，发现更高版本时弹窗提示；也可以在“设置 → 检查更新”手动复查。两条路径都并发查询三条来源，按版本号选择较新的正式版或预览版清单：
+应用启动后会静默检查一次，发现更高版本或同版本号的新构建时弹窗提示；同一个构建只提示一次，首次启动若已是最新或三路都查询失败，会短暂提示一次检查结果。也可以在“设置 → 检查更新”手动复查。两条路径都并发查询三条来源，按版本号与构建标识选择较新的正式版或预览版清单：
 
 1. 官网：`https://superreader.828696.xyz/data/releases.json`
 2. GitHub：`https://raw.githubusercontent.com/ZSOF-Rui/SuperReader/main/site/data/releases.json`
 3. 镜像站：`https://superreader-update-ch09cuq83vg.qoder.website/data/releases.json`
 
-三处使用同一份 `site/data/releases.json`，只读取版本号、下载地址、大小与 SHA-256，不上传任何设备或卡片数据。任一来源失败时其余来源仍可完成检查；版本号相同时按官网、镜像站、GitHub 的顺序取下载地址。应用只接受 `https`，会校验包名、APK 相对路径、版本号与哈希格式；下载仍在浏览器中完成。清单格式和失败回退规则见 [docs/UPDATE-CHECK.md](docs/UPDATE-CHECK.md)。
+三处使用同一份 `site/data/releases.json`，只读取版本号、构建标识、下载地址、大小与 SHA-256，不上传任何设备或卡片数据。任一来源失败时其余来源仍可完成检查；`versionCode` 相同时比较 `buildId` 与 `builtAt`，同一版本号重发的包也能被发现；下载地址按官网、镜像站、GitHub 的顺序选择。应用只接受 `https`，会校验包名、APK 相对路径、版本号与哈希格式；下载仍在浏览器中完成。清单格式和失败回退规则见 [docs/UPDATE-CHECK.md](docs/UPDATE-CHECK.md)。
 
 ## 仓库内容
 
@@ -93,7 +93,7 @@ node scripts/check-site.mjs
 ## 发布流程
 
 1. 更新 `site/downloads/` 中的安装包，文件名带版本号。
-2. 更新 `site/data/releases.json` 对应渠道的 `versionCode`、大小、SHA-256 与说明；同一渠道的 `versionCode` 必须递增。
+2. 更新 `site/data/releases.json` 对应渠道的 `versionCode`、大小、SHA-256 与说明；正常发版时 `versionCode` 递增。若确实需要保持版本号不变重发，必须写入新的 `buildId` 与更大的 `builtAt`，否则已安装的同版本构建不会认为它是更新。
 3. 同步更新 `site/index.html` 中展示的版本、大小与 SHA-256。
 4. 运行 `node scripts/check-site.mjs`。
 5. 提交并推送；GitHub Actions 检查通过后部署 `site/` 到 Pages。

@@ -32,11 +32,11 @@ certutil -hashfile SuperReader-1.9.0.apk SHA256
 
 | 文件 | 大小 | SHA-256 |
 | --- | --- | --- |
-| `SuperReader-1.9.0.apk` | 13,738,506 字节 | `7d5ede1a02222694b40f62327862166378d75e60691ea21b9dd773278d311959` |
-| `SuperReader-1.9.0-preview6.apk` | 13,738,522 字节 | `41bf260e7db070573321c18cc82856936a4d406f23286cc77bb01a0cf1518571` |
+| `SuperReader-1.9.0.apk` | 13,738,506 字节 | `6e4fc3262c9e024a0c827f713e2f46d18d5535edec36a1801eb36ea0cfcb7fd1` |
+| `SuperReader-1.9.0-preview6.apk` | 13,738,522 字节 | `7e8447a46104a996aab63865ce0943a5975f1f10eb042091a823624ee37a6d6b` |
 | `SuperReader-Windows-1.1.0-preview2-r2.zip` | 23,709,516 字节 | `8021fd016e19af19b9a3bd3c2ac88534f44206449e65b8e5e701c95b1dd6c20e` |
 
-以 `site/data/releases.json` 与 GitHub Release 附带的 `SHA256SUMS` 为准。
+以 `site/data/releases.json` 与 GitHub Release 附带的 `SHA256SUMS` 为准。本轮是版本号不变的同版本重发，清单中的 `buildId` 均为 `20261105T152020Z`、`builtAt` 均为 `1793892020802`；大小与上一轮相同，但 SHA-256 已变化。
 
 ## Android 包名与版本
 
