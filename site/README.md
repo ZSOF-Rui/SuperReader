@@ -40,7 +40,7 @@ node scripts/check-site.mjs
 
 ## 检查更新的真实边界
 
-- App 在启动后与用户手动点“检查更新”时联网：同时通过 HTTPS 读取 `https://superreader.828696.xyz/data/releases.json`、`https://raw.githubusercontent.com/ZSOF-Rui/SuperReader/main/site/data/releases.json` 与 `https://superreader-update-ch09cuq83vg.qoder.website/data/releases.json`，选 versionCode 更高的清单；单条失败时使用其余来源，三处都失败则提示网络错误。启动检查在发现更高版本或同版本号的新构建、且该构建未提示过时弹窗，同一个构建只提示一次；首次启动若已是最新或三路都失败，会短暂提示一次检查结果。检查不上传卡片数据。
+- App 在启动后与用户手动点“检查更新”时联网：同时通过 HTTPS 读取 `https://superreader.828696.xyz/data/releases.json`、`https://raw.githubusercontent.com/ZSOF-Rui/SuperReader/main/site/data/releases.json` 与 `https://superreader-update-ch09cuq83vg.qoder.website/data/releases.json`，选 versionCode 更高的清单；单条失败时使用其余来源，三处都失败则提示网络错误。启动检查在发现更高版本或同版本号的新构建、且该构建未提示过时弹窗，同一个构建只提示一次；首次启动若已是最新或三路都失败，会短暂提示一次检查结果。同版本新构建识别从 D57（2026-11-05）构建起生效；仍安装上一版同版本号包的用户需要手动安装一次，之后才会收到后续同版本重发的提示。检查不上传卡片数据。
 - 更新清单只包含版本号、安装包路径、大小、SHA-256 与说明；App 校验包名与 APK 相对路径，不自动下载或安装。
 - 站点上的“检查更新”是浏览器端功能：用户选择正式版或预览版通道，填入当前 `versionCode`，页面读取 `releases.json` 后按该通道比较并给出下载入口。
 - 两个通道包名不同（`com.superreader.app` / `com.superreader.app.preview`），版本号不能跨通道比较；页面会让用户先选通道。
