@@ -7,56 +7,56 @@
 Linux：
 
 ```bash
-sha256sum SuperReader-1.9.0.apk
+sha256sum SuperReader-2.0.0.apk
 ```
 
 macOS：
 
 ```bash
-shasum -a 256 SuperReader-1.9.0.apk
+shasum -a 256 SuperReader-2.0.0.apk
 ```
 
 Windows PowerShell：
 
 ```powershell
-Get-FileHash .\SuperReader-1.9.0.apk -Algorithm SHA256
+Get-FileHash .\SuperReader-2.0.0.apk -Algorithm SHA256
 ```
 
 Windows CMD：
 
 ```bat
-certutil -hashfile SuperReader-1.9.0.apk SHA256
+certutil -hashfile SuperReader-2.0.0.apk SHA256
 ```
 
 当前正式版与预览版：
 
 | 文件 | 大小 | SHA-256 |
 | --- | --- | --- |
-| `SuperReader-1.9.0.apk` | 13,738,506 字节 | `6e4fc3262c9e024a0c827f713e2f46d18d5535edec36a1801eb36ea0cfcb7fd1` |
-| `SuperReader-1.9.0-preview6.apk` | 13,738,522 字节 | `7e8447a46104a996aab63865ce0943a5975f1f10eb042091a823624ee37a6d6b` |
+| `SuperReader-2.0.0.apk` | 13,771,270 字节 | `0917c8f39158ab1134ff5ba2b4f67686b12d3ead3585261f39f18c8477b7b780` |
+| `SuperReader-2.0.0-preview1.apk` | 13,771,290 字节 | `3bc0cd834a1ed08bd8857a18c2973af990f1350bf9a5f6469ccaacd01a152ac2` |
 | `SuperReader-Windows-1.1.0-preview2-r2.zip` | 23,709,516 字节 | `8021fd016e19af19b9a3bd3c2ac88534f44206449e65b8e5e701c95b1dd6c20e` |
 
-以 `site/data/releases.json` 与 GitHub Release 附带的 `SHA256SUMS` 为准。本轮是版本号不变的同版本重发，清单中的 `buildId` 均为 `20261105T152020Z`、`builtAt` 均为 `1793892020802`；大小与上一轮相同，但 SHA-256 已变化。
+以 `site/data/releases.json` 与 GitHub Release 附带的 `SHA256SUMS` 为准。本轮正式版与预览版分别升到 2.0.0 (20) 与 2.0.0-preview1 (40)，清单中的 `buildId` 均为 `20261105T172538Z`、`builtAt` 均为 `1793899538401`；两个包都新增本机交易账本与交易备注。
 
 ## Android 包名与版本
 
 使用 Android SDK build-tools：
 
 ```bash
-aapt dump badging SuperReader-1.9.0.apk | head -5
+aapt dump badging SuperReader-2.0.0.apk | head -5
 ```
 
 应看到：
 
-- 正式版：`package: name='com.superreader.app' versionCode='19' versionName='1.9.0'`
-- 预览版：`package: name='com.superreader.app.preview' versionCode='39' versionName='1.9.0-preview6'`
+- 正式版：`package: name='com.superreader.app' versionCode='20' versionName='2.0.0'`
+- 预览版：`package: name='com.superreader.app.preview' versionCode='40' versionName='2.0.0-preview1'`
 
 ## 签名
 
 当前所有 Android 包都是**测试签名**，不是生产签名：
 
 ```bash
-apksigner verify --print-certs SuperReader-1.9.0.apk
+apksigner verify --print-certs SuperReader-2.0.0.apk
 ```
 
 证书主体应为 `CN=Android Debug`，证书 SHA-256 为

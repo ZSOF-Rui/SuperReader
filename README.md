@@ -7,25 +7,25 @@
 - 问题反馈：[Issues](https://github.com/ZSOF-Rui/SuperReader/issues)
 - 版本历史：[CHANGELOG.md](CHANGELOG.md)
 
-> 当前安装包均为**测试签名**，未上架应用商店，也不是银行或交通运营商的官方工具。六张实验卡、回乡证与台胞证实验入口、Windows 桌面版、卡产品名与全球 BIN 推断都还没有完成真实卡片验收。
+> 当前安装包均为**测试签名**，未上架应用商店，也不是银行或交通运营商的官方工具。六张实验卡、回乡证与台胞证实验入口、Windows 桌面版、卡产品名与全球 BIN 推断都还没有完成真实卡片验收；本机交易账本目前只经单元测试与模拟器演示数据验证，尚未在真卡上跨 30 条累计。
 
 ## 下载
 
 | 渠道 | 版本 | 包名 | 下载 |
 | --- | --- | --- | --- |
-| Android 正式版 | 1.9.0 (19) | `com.superreader.app` | [SuperReader-1.9.0.apk](site/downloads/SuperReader-1.9.0.apk) |
-| Android 预览版 | 1.9.0-preview6 (39) | `com.superreader.app.preview` | [SuperReader-1.9.0-preview6.apk](site/downloads/SuperReader-1.9.0-preview6.apk) |
+| Android 正式版 | 2.0.0 (20) | `com.superreader.app` | [SuperReader-2.0.0.apk](site/downloads/SuperReader-2.0.0.apk) |
+| Android 预览版 | 2.0.0-preview1 (40) | `com.superreader.app.preview` | [SuperReader-2.0.0-preview1.apk](site/downloads/SuperReader-2.0.0-preview1.apk) |
 | Windows 测试版 | 1.1.0-preview2 | 免安装 zip | [SuperReader-Windows-1.1.0-preview2-r2.zip](site/downloads/SuperReader-Windows-1.1.0-preview2-r2.zip) |
 
-安装前请核对 SHA-256；方法见 [docs/VERIFY-RELEASES.md](docs/VERIFY-RELEASES.md)。正式版与预览版包名不同，可以同时安装；开发版 1.9.0-dev13 (41) 不对外发布。
+安装前请核对 SHA-256；方法见 [docs/VERIFY-RELEASES.md](docs/VERIFY-RELEASES.md)。正式版与预览版包名不同，可以同时安装；开发版 2.0.0-dev14 (42) 不对外发布。
 
 ### Android 版本差异
 
 | 版本 | 内容 |
 | --- | --- |
-| 正式版 1.9.0 | 交通联合、城市一卡通、PBOC / EMV 银行卡、电子护照与港澳台通行证；六张实验卡；全球公开卡种目录与公开密钥库、ICOCA / PASMO 与 NETS FlashPay 识别、MIFARE MAD 修正与 SAK 0x28 卡的 MIFARE 兼容区只读回退；四套配色（8 组明暗）、回乡证 / 台胞证实验入口、163 家银行产品名与等级、全球 6 位 BIN 离线兜底；交通卡线路与站点按乘车城市匹配，并支持常州地铁终端取位；换乘 / 免费换乘 / 异地用卡 / 清晨 / 夜间推断标记覆盖所有交通卡记录，异地用卡也覆盖出租与小额消费；本版起提供本机 MIFARE Classic 密钥导入（最多 32 把，只存本机、掩码显示、不做字典爆破）；启动后自动检查更新，同版本号的新构建也能识别；保存后可自定义卡名称 |
-| 预览版 1.9.0-preview6 | 在正式版基础上保留手机读卡桥接（只监听本机局域网、只传脱敏诊断文本）与开发设置项；独立包名，可与正式版共存 |
-| 开发版 1.9.0-dev13 | 与预览版同源，用于内部核验；暂未发布 |
+| 正式版 2.0.0 | 本机交易账本：读卡后合并新交易，单卡最多 400 条，卡内只留最近 30 条也能累计历史，较早记录标“本机留存”；每笔交易可加、改、删备注（最多 120 字），备注只存本机、不进诊断导出；设置可查看累计并一键清空；演示数据、证件与源数据卡不生效。其余延续 1.9.0：交通联合、城市一卡通、PBOC / EMV 银行卡、电子护照与港澳台通行证；六张实验卡；全球公开卡种目录与公开密钥库、ICOCA / PASMO 与 NETS FlashPay 识别、MIFARE MAD 修正与 SAK 0x28 卡的 MIFARE 兼容区只读回退；四套配色（8 组明暗）、回乡证 / 台胞证实验入口、163 家银行产品名与等级、全球 6 位 BIN 离线兜底；交通卡线路与站点按乘车城市匹配，并支持常州地铁终端取位；换乘 / 免费换乘 / 异地用卡 / 清晨 / 夜间推断标记覆盖所有交通卡记录，异地用卡也覆盖出租与小额消费；本机 MIFARE Classic 密钥导入（最多 32 把，只存本机、掩码显示、不做字典爆破）；启动后自动检查更新，同版本号的新构建也能识别；保存后可自定义卡名称 |
+| 预览版 2.0.0-preview1 | 在正式版基础上保留手机读卡桥接（只监听本机局域网、只传脱敏诊断文本）与开发设置项；交易账本、备注与正式版一致；独立包名，可与正式版共存 |
+| 开发版 2.0.0-dev14 | 与预览版同源，用于内部核验；暂未发布 |
 
 ## 界面预览
 
