@@ -2,9 +2,9 @@
 
 ## 边界
 
-- 只在用户进入“设置 → 检查更新”并点击按钮后发起请求，没有后台轮询、开机自检或自动下载。
+- 启动后自动检查一次，发现更高版本时弹窗提示，同一版本不重复打扰；此外只在用户进入“设置 → 检查更新”并点击按钮后发起请求。没有后台轮询、定时任务或自动下载。
 - 只读取版本清单，不上传设备标识、卡号、BIN、证件信息或使用统计。
-- 只使用 HTTPS；应用 Manifest 中的 `INTERNET` 权限仅为该功能和开发版的局域网读卡桥接服务。
+- 只使用 HTTPS；应用 Manifest 中的 `INTERNET` 权限仅用于更新检查和预览版 / 开发版的局域网读卡桥接服务。
 - 下载在浏览器中完成，应用不静默安装 APK。
 
 ## 三条路径
@@ -29,12 +29,12 @@
       "label": "正式版",
       "packageName": "com.superreader.app",
       "latest": {
-        "versionName": "1.7.2",
-        "versionCode": 17,
-        "releasedAt": "2026-11-02T13:45:07+08:00",
-        "file": "downloads/SuperReader-1.7.2.apk",
-        "sizeBytes": 11970209,
-        "sha256": "3a4fda823a07afec7103ec792895102bc4c6e0820706b4a711e0004763ffc14d",
+        "versionName": "1.8.0",
+        "versionCode": 18,
+        "releasedAt": "2026-11-05T19:47:00+08:00",
+        "file": "downloads/SuperReader-1.8.0.apk",
+        "sizeBytes": 13689346,
+        "sha256": "36076eb99cb1cb15de22d43d6c2d7ddb8df478d4e5aaefd24af8760dd735e3e1",
         "notes": ["…"]
       },
       "history": []

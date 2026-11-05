@@ -40,7 +40,7 @@ node scripts/check-site.mjs
 
 ## 检查更新的真实边界
 
-- App 只在用户手动点“检查更新”时联网：同时通过 HTTPS 读取 `https://superreader.828696.xyz/data/releases.json`、`https://raw.githubusercontent.com/ZSOF-Rui/SuperReader/main/site/data/releases.json` 与 `https://superreader-update-ch09cuq83vg.qoder.website/data/releases.json`，选 versionCode 更高的清单；单条失败时使用其余来源，三处都失败则提示网络错误。应用不会自动检查，也不会上传卡片数据。
+- App 在启动后与用户手动点“检查更新”时联网：同时通过 HTTPS 读取 `https://superreader.828696.xyz/data/releases.json`、`https://raw.githubusercontent.com/ZSOF-Rui/SuperReader/main/site/data/releases.json` 与 `https://superreader-update-ch09cuq83vg.qoder.website/data/releases.json`，选 versionCode 更高的清单；单条失败时使用其余来源，三处都失败则提示网络错误。启动检查只在发现更高版本且该版本未提示过时弹窗，同一版本只提示一次；检查不上传卡片数据。
 - 更新清单只包含版本号、安装包路径、大小、SHA-256 与说明；App 校验包名与 APK 相对路径，不自动下载或安装。
 - 站点上的“检查更新”是浏览器端功能：用户选择正式版或预览版通道，填入当前 `versionCode`，页面读取 `releases.json` 后按该通道比较并给出下载入口。
 - 两个通道包名不同（`com.superreader.app` / `com.superreader.app.preview`），版本号不能跨通道比较；页面会让用户先选通道。
@@ -116,7 +116,7 @@ base64 -w0 ~/.android/debug.keystore > debug.keystore.base64
 ## 发布状态与限制
 
 - 当前下载是 **debug / 测试签名**，不是应用商店正式签名包。
-- 公开站点与版本清单包含正式版 1.7.2 与预览版 1.8.0-preview7；三个版本都支持保存后自定义卡名称并在结果页标题优先显示。六张实验卡随正式版发布，但均未真卡逐张验证。开发版 1.9.0-dev7 留给内部测试，不在此发布。
+- 公开站点与版本清单包含正式版 1.8.0 与预览版 1.9.0-preview4；三个公开版本都支持保存后自定义卡名称并在结果页标题优先显示。六张实验卡随正式版发布，但均未真卡逐张验证。开发版 1.9.0-dev11 与实验室版 0.1.0-lab6 留给内部测试，不在此发布。
 - 下载区另有 Windows 1.1.0-preview2 测试包：PC/SC 只读，未在真实读卡器与真实银行卡上验收，无代码签名。
 - 站点已移除跨平台对比与相关描述；主站只保留 Android 下载、Windows 测试版下载、功能、卡片、开发进展、隐私与 FAQ。
 - 自定义域名 `superreader.828696.xyz` 已解析到 Cloudflare（104.21.30.65 / 172.67.172.53）；GitHub Pages 默认地址 `https://zsof-rui.github.io/SuperReader/` 不依赖该 DNS。

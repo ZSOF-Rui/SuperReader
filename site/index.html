@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>卡阅 SuperReader · 把卡片贴近手机，读懂芯片里的公开信息</title>
-<meta name="description" content="卡阅是一款 Android NFC 只读卡片信息工具：交通卡、银行卡、电子证件。不写卡、不上传；仅手动检查更新时读取官网、GitHub 与镜像站的版本清单。">
+<meta name="description" content="卡阅是一款 Android NFC 只读卡片信息工具：交通卡、银行卡、电子证件。不写卡、不上传；启动后与手动检查更新时读取官网、GitHub 与镜像站的版本清单。">
 <meta name="theme-color" content="#f3f6f4">
 <script>document.documentElement.classList.add('js');</script>
 <meta property="og:type" content="website">
 <meta property="og:title" content="卡阅 SuperReader · NFC 只读卡片信息">
-<meta property="og:description" content="交通卡、银行卡、电子证件，贴近手机即可读取公开信息。只读、数据留在本机，仅手动检查更新时联网。">
+<meta property="og:description" content="交通卡、银行卡、电子证件，贴近手机即可读取公开信息。只读、数据留在本机，启动后与手动检查更新时联网。">
 <meta property="og:image" content="assets/og.png">
 <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
 <link rel="stylesheet" href="assets/styles.css">
@@ -43,7 +43,7 @@
     <div class="hero-copy">
       <p class="eyebrow">Android · NFC 只读</p>
       <h1 id="hero-title">把卡片贴近手机，<span class="mark"><span class="nowrap">读懂</span>芯片里的公开信息。</span></h1>
-      <p class="lead">交通卡、银行卡、电子证件。卡阅只读取芯片公开的数据：不写卡、不克隆、不上传。读卡与解析全部在本机完成；只有你手动点“检查更新”时，才会读取官网、GitHub 与镜像站的版本清单。</p>
+      <p class="lead">交通卡、银行卡、电子证件。卡阅只读取芯片公开的数据：不写卡、不克隆、不上传。读卡与解析全部在本机完成；应用启动后与手动点“检查更新”时，才会读取官网、GitHub 与镜像站的版本清单。</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="#download">下载 Android 版</a>
         <a class="btn btn-quiet" href="#update">检查更新</a>
@@ -93,7 +93,7 @@
         </div>
       </div>
       <div class="float-note note-a" aria-hidden="true">ISO-DEP / ISO 7816</div>
-      <div class="float-note note-b" aria-hidden="true">仅检查更新时联网</div>
+      <div class="float-note note-b" aria-hidden="true">仅更新检查时联网</div>
       <p class="visual-note">界面示意 · 卡面与数据为虚构</p>
     </div>
   </div>
@@ -102,7 +102,7 @@
 <section class="principles" aria-label="使用边界">
   <div class="shell principles-grid">
     <div><strong>只读</strong><span>不写卡、不克隆、不模拟</span></div>
-    <div><strong>仅需时联网</strong><span>只在手动检查更新时读取版本清单</span></div>
+    <div><strong>需要时联网</strong><span>启动后与手动检查更新时读取版本清单</span></div>
     <div><strong>本机</strong><span>历史与卡包不上传，卸载即清除</span></div>
     <div><strong>克制</strong><span>无账号、广告与统计 SDK</span></div>
   </div>
@@ -161,8 +161,8 @@
         <span class="feature-no">06</span>
         <div class="feature-body">
           <h3>外观与更新</h3>
-          <p>浅色、深色与跟随系统三种明暗模式；预览版与开发版另有松岚、墨檀、曜石、霁青四套配色，每套都含浅色与深色。设置里的「检查更新」会同时查询官网、GitHub 与镜像站的版本清单，发现新版本时可直接打开下载地址；不会自动检查，也不会上传卡片数据。</p>
-          <p class="tag-line"><span>三种明暗</span><span>预览版四套配色</span><span>三路更新检查</span></p>
+          <p>浅色、深色与跟随系统三种明暗模式，另有松岚、墨檀、曜石、霁青四套配色，每套都含浅色与深色。应用启动后会自动检查一次更新，设置里的「检查更新」可随时复查；两处都会同时查询官网、GitHub 与镜像站的版本清单，只读取清单，不上传卡片数据。</p>
+          <p class="tag-line"><span>四套配色</span><span>启动自动检查</span><span>三路更新检查</span></p>
         </div>
       </li>
     </ol>
@@ -189,7 +189,7 @@
     <header class="section-head">
       <p class="kicker">支持范围</p>
       <h2 id="cards-title">支持哪些卡片</h2>
-      <p>当前正式版 1.7.2 已加入交通联合、城市一卡通、银联 / EMV 银行卡、电子证件、全球公开卡种目录，以及八达通、澳门通、悠游卡、T-money、Suica、EZ-Link 六张实验卡；并新增 ICOCA / PASMO、NETS FlashPay 识别与 SAK 0x28 卡的 MIFARE 兼容区只读回退。六张实验卡均未在真实卡片上逐张验证，不承诺成功率；预览版 1.8.0-preview7 在此基础上增加四套配色、回乡证与台胞证两项实验证件，保留完整卡产品名与全球公开 BIN 参考数据，并让银行卡详情标题展示卡产品名与等级（有数据时）。正式版与预览版都支持保存后自定义卡名称，结果页标题会优先显示自定义名。</p>
+      <p>当前正式版 1.8.0 已承接预览版能力：交通联合、城市一卡通、银联 / EMV 银行卡、电子证件、全球公开卡种目录、四套配色，以及回乡证与台胞证两项实验证件；同时包含八达通、澳门通、悠游卡、T-money、Suica、EZ-Link 六张实验卡，以及 ICOCA / PASMO、NETS FlashPay 识别与 SAK 0x28 卡的 MIFARE 兼容区只读回退。本版还修正了交通卡的线路与站点解析：按乘车城市而不是发卡城市查站点表，并修正站点表里福州与苏州的城市名。六张实验卡均未在真实卡片上逐张验证，不承诺成功率；预览版 1.9.0-preview4 在此基础上承接开发版的手机读卡桥接、开发设置项与本机密钥导入。正式版与预览版都支持保存后自定义卡名称，结果页标题会优先显示自定义名。</p>
     </header>
 
     <p class="table-hint">表格可左右滑动查看完整内容。</p>
@@ -252,20 +252,20 @@
     <div class="download-panel" data-channel="stable">
       <div class="download-main">
         <p class="channel-kicker">Android · 正式版</p>
-        <h3>卡阅 <span class="js-version">1.7.2</span></h3>
-        <p>交通联合、城市一卡通、银联 / EMV 银行卡、电子证件、全球公开卡种目录，以及六张实验卡。新增 ICOCA / PASMO、NETS FlashPay 识别与 SAK 0x28 卡的 MIFARE 兼容区只读回退；保存后可自定义卡片名称，结果页标题优先显示自定义名。读卡与解析在本机完成。</p>
+        <h3>卡阅 <span class="js-version">1.8.0</span></h3>
+        <p>承接预览版能力：交通联合、城市一卡通、银联 / EMV 银行卡、电子证件、全球公开卡种目录、四套配色，以及回乡证与台胞证两项实验证件；保留 ICOCA / PASMO、NETS FlashPay 识别与 SAK 0x28 卡的 MIFARE 兼容区只读回退。新增启动后自动检查更新，修正交通卡线路与站点的城市匹配，结果页标题优先显示自定义名称。</p>
         <dl class="download-meta">
-          <div><dt>versionCode</dt><dd class="js-code">17</dd></div>
+          <div><dt>versionCode</dt><dd class="js-code">18</dd></div>
           <div><dt>包名</dt><dd><code class="js-package">com.superreader.app</code></dd></div>
-          <div><dt>大小</dt><dd class="js-size">11.4 MB</dd></div>
-          <div><dt>更新日期</dt><dd class="js-date">2026-11-02</dd></div>
+          <div><dt>大小</dt><dd class="js-size">13.1 MB</dd></div>
+          <div><dt>更新日期</dt><dd class="js-date">2026-11-05</dd></div>
           <div><dt>要求</dt><dd>Android 8.0+</dd></div>
         </dl>
         <div class="download-actions">
-          <a class="btn btn-primary js-download" href="downloads/SuperReader-1.7.2.apk" download>下载正式版 APK</a>
-          <button class="btn btn-quiet copy-sha" type="button" data-sha="3a4fda823a07afec7103ec792895102bc4c6e0820706b4a711e0004763ffc14d">复制 SHA-256</button>
+          <a class="btn btn-primary js-download" href="downloads/SuperReader-1.8.0.apk" download>下载正式版 APK</a>
+          <button class="btn btn-quiet copy-sha" type="button" data-sha="36076eb99cb1cb15de22d43d6c2d7ddb8df478d4e5aaefd24af8760dd735e3e1">复制 SHA-256</button>
         </div>
-        <p class="sha-line"><span>SHA-256</span><code class="js-sha">3a4fda823a07afec7103ec792895102bc4c6e0820706b4a711e0004763ffc14d</code></p>
+        <p class="sha-line"><span>SHA-256</span><code class="js-sha">36076eb99cb1cb15de22d43d6c2d7ddb8df478d4e5aaefd24af8760dd735e3e1</code></p>
       </div>
       <aside class="download-side">
         <h4>正式版须知</h4>
@@ -273,7 +273,7 @@
           <li>稳定功能，推荐日常使用</li>
           <li>六张实验卡进入正式版，但仍未真卡逐张验证</li>
           <li>测试签名，未上架应用商店</li>
-          <li>NFC 与 INTERNET 权限；INTERNET 仅用于手动检查更新</li>
+          <li>NFC 与 INTERNET 权限；INTERNET 仅用于启动后与手动检查更新</li>
         </ul>
         <p class="note">请只从本页或项目 Release 下载，并核对 SHA-256。</p>
       </aside>
@@ -282,26 +282,28 @@
     <div class="download-panel is-preview" data-channel="preview">
       <div class="download-main">
         <p class="channel-kicker">Android · 预览版</p>
-        <h3>卡阅 <span class="js-version">1.8.0-preview7</span></h3>
-        <p>在正式版 1.7.2 基础上，增加四套配色（8 组明暗）、回乡证与台胞证两项实验证件，保留完整卡产品名与全球公开 BIN 离线参考数据；银行卡详情标题会显示卡产品名与等级（有数据时）。三个版本都支持保存后自定义卡名称，结果页标题优先显示自定义名。仍是只读，不写卡、不上传。</p>
+        <h3>卡阅 <span class="js-version">1.9.0-preview4</span></h3>
+        <p>在正式版 1.8.0 基础上，承接开发版的手机读卡桥接与开发设置项：桥接只监听局域网并传输脱敏诊断文本；正式版不含桥接。新增本机 MIFARE Classic 密钥导入（最多 32 把，只存本机并掩码显示，不做字典爆破）。保留四套配色、两项实验证件、全球公开卡种目录与启动更新检查。仍是只读，不写卡、不上传。</p>
         <dl class="download-meta">
-          <div><dt>versionCode</dt><dd class="js-code">31</dd></div>
+          <div><dt>versionCode</dt><dd class="js-code">37</dd></div>
           <div><dt>包名</dt><dd><code class="js-package">com.superreader.app.preview</code></dd></div>
-          <div><dt>大小</dt><dd class="js-size">13.0 MB</dd></div>
-          <div><dt>更新日期</dt><dd class="js-date">2026-11-02</dd></div>
+          <div><dt>大小</dt><dd class="js-size">13.1 MB</dd></div>
+          <div><dt>更新日期</dt><dd class="js-date">2026-11-05</dd></div>
           <div><dt>要求</dt><dd>Android 8.0+</dd></div>
         </dl>
         <div class="download-actions">
-          <a class="btn btn-primary js-download" href="downloads/SuperReader-1.8.0-preview7.apk" download>下载预览版 APK</a>
-          <button class="btn btn-quiet copy-sha" type="button" data-sha="28ccd164c3cf248d6b9ae86a46055fcb61aaef67fd1f8c72ba5deaf21ff1707c">复制 SHA-256</button>
+          <a class="btn btn-primary js-download" href="downloads/SuperReader-1.9.0-preview4.apk" download>下载预览版 APK</a>
+          <button class="btn btn-quiet copy-sha" type="button" data-sha="08da5f2158db83c0959c784fa85da150982000ea6ec5a01ee4c4c955fe52a6ae">复制 SHA-256</button>
         </div>
-        <p class="sha-line"><span>SHA-256</span><code class="js-sha">28ccd164c3cf248d6b9ae86a46055fcb61aaef67fd1f8c72ba5deaf21ff1707c</code></p>
+        <p class="sha-line"><span>SHA-256</span><code class="js-sha">08da5f2158db83c0959c784fa85da150982000ea6ec5a01ee4c4c955fe52a6ae</code></p>
       </div>
       <aside class="download-side">
         <h4>预览版须知</h4>
         <ul>
           <li>独立包名，可与正式版同时安装</li>
           <li>四套配色（8 组明暗）、回乡证与台胞证入口</li>
+          <li>承接开发版手机读卡桥接，只在本机局域网可用</li>
+          <li>可在设置里导入本机 MIFARE Classic 密钥，逐把试读，不爆破</li>
           <li>完整卡产品名与全球 BIN 仅作离线参考</li>
           <li>六张实验卡与两项实验证件均未真卡逐张验证，不承诺成功率</li>
           <li>测试签名，未上架应用商店</li>
@@ -346,11 +348,11 @@
       <div class="verify-body">
         <p>先把文件名与上方一致，再在文件所在目录运行对应命令。哈希应与页面显示的 64 位字符串完全一致。</p>
         <p><strong>Windows PowerShell</strong></p>
-        <pre><code>Get-FileHash .\SuperReader-1.7.2.apk -Algorithm SHA256
+        <pre><code>Get-FileHash .\SuperReader-1.8.0.apk -Algorithm SHA256
 Get-FileHash .\SuperReader-Windows-1.1.0-preview2-r2.zip -Algorithm SHA256</code></pre>
         <p><strong>macOS / Linux</strong></p>
-        <pre><code>shasum -a 256 SuperReader-1.7.2.apk</code></pre>
-        <p>预览版把文件名换成 <code>SuperReader-1.8.0-preview7.apk</code>。Android 包均为测试签名，Windows 包没有代码签名，均未上架应用商店。安装时系统可能提示“未知来源”或“未知发布者”，这是正常现象；请只从本页或项目 Release 下载。</p>
+        <pre><code>shasum -a 256 SuperReader-1.8.0.apk</code></pre>
+        <p>预览版把文件名换成 <code>SuperReader-1.9.0-preview4.apk</code>。Android 包均为测试签名，Windows 包没有代码签名，均未上架应用商店。安装时系统可能提示“未知来源”或“未知发布者”，这是正常现象；请只从本页或项目 Release 下载。</p>
       </div>
     </details>
   </div>
@@ -361,8 +363,8 @@ Get-FileHash .\SuperReader-Windows-1.1.0-preview2-r2.zip -Algorithm SHA256</code
     <div class="update-copy">
       <p class="kicker">版本检查</p>
       <h2 id="update-title">检查是否有新版本</h2>
-      <p>这是浏览器里的版本比较工具：读取本站的 <code>data/releases.json</code>，按所选通道的 versionCode 比较，不会上传你安装的版本。App 里也有同样的检查：只有你手动点“检查更新”时，才会同时读取官网、GitHub 与镜像站的版本清单，不会自动联网。</p>
-      <p class="hint">在 App 的「设置 → 检查更新」里可以看到当前版本，例如 <code>1.7.2 (17)</code>，括号里的数字就是 versionCode。正式版与预览版包名不同，请选择对应通道再比较。</p>
+      <p>这是浏览器里的版本比较工具：读取本站的 <code>data/releases.json</code>，按所选通道的 versionCode 比较，不会上传你安装的版本。App 启动后会自动检查一次，也可以在「设置 → 检查更新」手动复查；检查会同时读取官网、GitHub 与镜像站的版本清单，只读取清单，不上传卡片数据。</p>
+      <p class="hint">在 App 的「设置 → 检查更新」里可以看到当前版本，例如 <code>1.8.0 (18)</code>，括号里的数字就是 versionCode。正式版与预览版包名不同，请选择对应通道再比较。</p>
       <ul class="update-points">
         <li>版本清单是静态文件，官网、GitHub 与镜像站三处内容一致。</li>
         <li>比较在浏览器本地完成，不会写入服务器日志。</li>
@@ -381,10 +383,10 @@ Get-FileHash .\SuperReader-Windows-1.1.0-preview2-r2.zip -Algorithm SHA256</code
         </div>
         <div class="field">
           <label for="current-code">当前 versionCode</label>
-          <input id="current-code" name="currentCode" type="number" min="1" step="1" inputmode="numeric" value="17" required>
-          <p class="field-hint">只填数字，例如 1.7.2 (17) 里的 17。</p>
+          <input id="current-code" name="currentCode" type="number" min="1" step="1" inputmode="numeric" value="18" required>
+          <p class="field-hint">只填数字，例如 1.8.0 (18) 里的 18。</p>
         </div>
-        <p class="channel-hint" id="channel-hint">正式版最新：1.7.2 (17) · 预览版最新：1.8.0-preview7 (31)</p>
+        <p class="channel-hint" id="channel-hint">正式版最新：1.8.0 (18) · 预览版最新：1.9.0-preview4 (37)</p>
         <button class="btn btn-primary btn-block" type="submit" id="update-submit">检查更新</button>
       </form>
       <div class="update-result" id="update-result" role="status" aria-live="polite">
@@ -400,28 +402,28 @@ Get-FileHash .\SuperReader-Windows-1.1.0-preview2-r2.zip -Algorithm SHA256</code
     <header class="section-head">
       <p class="kicker">开发进展</p>
       <h2 id="roadmap-title">正在测试的新东西</h2>
-      <p>正式版已更新到 <strong>1.7.2</strong>，新增 ICOCA / PASMO、NETS FlashPay 识别与全球公开卡种目录，六张实验卡仍会明确标注“实验、未真卡逐张验证”。预览版 <strong>1.8.0-preview7</strong> 增加四套配色、回乡证与台胞证两项实验证件，保留完整卡产品名与全球公开 BIN 参考数据，并在银行卡详情标题显示卡产品名与等级（有数据时）；开发版 <strong>1.9.0-dev7</strong> 继续验证手机读卡桥接。三个版本都支持保存后自定义卡名称，结果页标题优先显示自定义名。</p>
+      <p>正式版已更新到 <strong>1.8.0</strong>，承接预览版的四套配色、回乡证与台胞证两项实验证件、全球公开卡种目录与公开密钥库，加入启动后自动检查更新，并修正交通卡的线路与站点解析：按乘车城市而不是发卡城市查站点表，修正站点表里福州与苏州的城市名，换乘一趟车只列一条记录。预览版 <strong>1.9.0-preview4</strong> 承接开发版的手机读卡桥接、开发设置项与本机 MIFARE Classic 密钥导入；开发版 <strong>1.9.0-dev11</strong> 继续内部验证。三个公开版本都支持保存后自定义卡名称，结果页标题优先显示自定义名；六张实验卡仍会明确标注“实验、未真卡逐张验证”。</p>
     </header>
 
     <div class="roadmap-grid">
       <article class="roadmap-card">
         <div class="roadmap-top"><span class="roadmap-no">01</span><span class="badge badge-internal">预览版已包含</span></div>
         <h3>四套配色，收进设置菜单</h3>
-        <p>预览版与开发版提供松岚、墨檀、曜石、霁青四套配色，每套都有浅色与深色，共 8 组。主题只改变颜色，不改字体、圆角与页面结构；入口收在外观设置里，不占用设置页顶部空间。</p>
-        <p class="tag-line"><span>1.8.0-preview7</span><span>8 组配色</span><span>设置内切换</span></p>
+        <p>正式版、预览版与开发版都提供松岚、墨檀、曜石、霁青四套配色，每套都有浅色与深色，共 8 组。主题只改变颜色，不改字体、圆角与页面结构；入口收在外观设置里，不占用设置页顶部空间。</p>
+        <p class="tag-line"><span>1.8.0</span><span>8 组配色</span><span>设置内切换</span></p>
         <a class="roadmap-link" href="#download">下载预览版 <span aria-hidden="true">→</span></a>
       </article>
 
       <article class="roadmap-card">
         <div class="roadmap-top"><span class="roadmap-no">02</span><span class="badge badge-internal">正式版已包含</span></div>
         <h3>六张实验卡，随正式版发布</h3>
-        <p>八达通、澳门通、悠游卡、T-money、Suica、EZ-Link 的读取代码已进入正式版 1.7.2。它们仍是实验读取：只读、不写卡，也没有在真实卡片上逐张验证，不承诺成功率。</p>
-        <p class="tag-line"><span>1.7.2</span><span>六张卡</span><span>待真卡核验</span></p>
+        <p>八达通、澳门通、悠游卡、T-money、Suica、EZ-Link 的读取代码已进入正式版 1.8.0。它们仍是实验读取：只读、不写卡，也没有在真实卡片上逐张验证，不承诺成功率。</p>
+        <p class="tag-line"><span>1.8.0</span><span>六张卡</span><span>待真卡核验</span></p>
         <a class="roadmap-link" href="#download">下载正式版 <span aria-hidden="true">→</span></a>
       </article>
     </div>
 
-    <p class="roadmap-note">开发版 <code>1.9.0-dev7</code> 仍只用于内部核验，不写入 <code>releases.json</code>；预览版 <code>1.8.0-preview7</code> 已加入版本清单，可在上方下载。六张实验卡与两项实验证件尚未完成真卡逐张验证，正式版与预览版都不会把它们写成“已支持”。</p>
+    <p class="roadmap-note">开发版 <code>1.9.0-dev11</code> 仍只用于内部核验，不写入 <code>releases.json</code>；预览版 <code>1.9.0-preview4</code> 已加入版本清单，可在上方下载。六张实验卡与两项实验证件尚未完成真卡逐张验证，正式版与预览版都不会把它们写成“已支持”；站点表只覆盖有公开数据的城市，查不到时显示卡内编码与终端号，不猜线路名。</p>
   </div>
 </section>
 
@@ -430,11 +432,11 @@ Get-FileHash .\SuperReader-Windows-1.1.0-preview2-r2.zip -Algorithm SHA256</code
     <div>
       <p class="kicker">隐私</p>
       <h2 id="privacy-title">联网只为检查更新，卡数据不出本机</h2>
-      <p>卡阅所有版本只申请 NFC 与 INTERNET 权限，没有存储权限。INTERNET 只用于你手动点“检查更新”时，通过 HTTPS 读取官网、GitHub 与镜像站的版本清单；应用不会自动联网，不会上传卡片数据，也没有账号、广告或统计 SDK。</p>
+      <p>卡阅所有版本只申请 NFC 与 INTERNET 权限，没有存储权限。INTERNET 只用于应用启动后与手动点“检查更新”时，通过 HTTPS 读取官网、GitHub 与镜像站的版本清单；读卡过程不联网，检查也不上传卡片数据，没有账号、广告或统计 SDK。</p>
       <p>本站是纯静态页面：不接入统计脚本、广告、第三方字体或外部 CDN。版本检查读取同站点的 JSON 文件，比较过程只发生在你的浏览器里。</p>
     </div>
     <ul class="privacy-list">
-      <li><strong>仅 NFC + 更新检查</strong><span>INTERNET 只用于手动读取版本清单，无存储权限</span></li>
+      <li><strong>仅 NFC + 更新检查</strong><span>INTERNET 只用于启动后与手动读取版本清单，无存储权限</span></li>
       <li><strong>不上传</strong><span>无账号、无分析 SDK、无云端</span></li>
       <li><strong>本机保存</strong><span>历史最多 30 条，卸载即清除</span></li>
       <li><strong>不写卡</strong><span>不克隆、不模拟、不保存密钥</span></li>
@@ -455,7 +457,7 @@ Get-FileHash .\SuperReader-Windows-1.1.0-preview2-r2.zip -Algorithm SHA256</code
       </details>
       <details>
         <summary>预览版和开发版有什么区别？</summary>
-        <p>正式版 1.7.2 已包含六张实验卡、全球公开卡种目录与 ICOCA / PASMO、NETS FlashPay 识别；预览版 1.8.0-preview7 在此基础上增加四套配色、回乡证与台胞证两项实验证件，以及完整卡产品名与全球公开 BIN 参考数据，并让银行卡详情标题展示卡产品名与等级（有数据时），使用独立包名，可与正式版共存。开发版 1.9.0-dev7 继续验证手机读卡桥接，只用于内部核验，不公开分发。实验卡与两项实验证件都尚未真卡逐张验证。</p>
+        <p>正式版 1.8.0 已承接预览版的四套配色、回乡证与台胞证两项实验证件、全球公开卡种目录，并包含六张实验卡、ICOCA / PASMO 与 NETS FlashPay 识别，同时修正交通卡线路与站点的城市匹配；预览版 1.9.0-preview4 在此基础上承接开发版的手机读卡桥接、开发设置项与本机密钥导入，使用独立包名，可与正式版共存。开发版 1.9.0-dev11 继续内部验证，不公开分发。实验卡与两项实验证件都尚未真卡逐张验证。</p>
       </details>
       <details>
         <summary>可以给保存的卡片改名吗？</summary>
@@ -471,7 +473,7 @@ Get-FileHash .\SuperReader-Windows-1.1.0-preview2-r2.zip -Algorithm SHA256</code
       </details>
       <details>
         <summary>应用会自动联网检查更新吗？</summary>
-        <p>不会自动检查。应用在启动与读卡时都不联网；只有你在设置里点“检查更新”时，才会同时通过 HTTPS 读取官网、GitHub 与镜像站的版本清单。检查只发送普通网络请求，不上传卡片数据；三处都失败时会提示网络错误。</p>
+        <p>启动后会自动检查一次：发现更高版本且该版本未提示过时弹窗，同一版本只提示一次；你也可以随时在设置里点“检查更新”复查。检查会同时通过 HTTPS 读取官网、GitHub 与镜像站的版本清单，只发送普通网络请求，不上传卡片数据；三处都失败时不会弹窗打扰。读卡过程不联网。</p>
       </details>
       <details>
         <summary>可以读别人的卡吗？</summary>
