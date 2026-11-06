@@ -48,7 +48,7 @@ node scripts/check-site.mjs
 
 ## Web NFC 实验页
 
-`lab/web-nfc.html` 是独立的只读 NDEF 演示，不接入主站下载面板，也不写入版本清单。主站已移除跨平台对比区与相关入口，但保留下载区里的 Windows 测试版面板；本页只保留直达 URL：
+`lab/web-nfc.html` 是独立的只读 NDEF 演示，主站右上角导航提供“网页 NFC”入口直达本页；它不接入下载面板，也不写入版本清单。主站保留下载区里的 Windows 测试版面板。Qoder 镜像同步了同一页面与所需样式脚本，入口在镜像首页右上角。
 
 - 只在 **Android Chrome / Chromium** 且页面处于 HTTPS 或 localhost、保持前台时可用；桌面浏览器、Firefox、iOS Safari 不提供 `NDEFReader`，页面会显示“Web NFC API 不可用”并禁用扫描，这是预期行为。
 - 只解码 NDEF 的文本、网址、MIME、Smart Poster 与未知记录；不写标签、不上传、不保存。
@@ -89,7 +89,7 @@ node scripts/check-site.mjs
 ## Qoder 镜像（第三更新源）
 
 - 镜像地址：`https://superreader-update-ch09cuq83vg.qoder.website/`
-- 产物目录：`dist/qsite/`，只含镜像首页、同一份 `data/releases.json` 与当前正式版/预览版两个 APK，总大小控制在 50 MiB 内；历史版本留在 `site/downloads/`，不进入镜像。
+- 产物目录：`dist/qsite/`，含镜像首页、同一份 `data/releases.json`、网页 NFC 实验页与当前正式版/预览版两个 APK。镜像只保留最新两个 APK，历史版本留在 `site/downloads/`。
 - 更新步骤：复制新 APK 与清单 → `node scripts/check-qsite.mjs` → 用同一 Project 重新打包并发布。`dist/qsite/` 不提交到公开仓库，避免重复占用仓库空间。
 
 工作流会在 runner 上删除 `gradle.properties` 里的本地代理配置，再使用 Gradle 8.9 / JDK 17 / Android SDK 35 构建。项目没有 Gradle Wrapper，因此依赖 `gradle/actions/setup-gradle`。
@@ -116,7 +116,7 @@ base64 -w0 ~/.android/debug.keystore > debug.keystore.base64
 ## 发布状态与限制
 
 - 当前下载是 **debug / 测试签名**，不是应用商店正式签名包。
-- 公开站点与版本清单包含正式版 2.0.0 与预览版 2.0.0-preview1；四个版本都支持本机交易账本与交易备注（单卡最多 400 条，备注只存本机）、保存后自定义卡名称、交易标记与本机 MIFARE 密钥导入。六张实验卡随正式版发布，但均未真卡逐张验证。开发版 2.0.0-dev14 与实验室版 0.1.0-lab10 留给内部测试，不在此发布。
+- 公开站点与版本清单包含正式版 2.0.0 与预览版 2.0.0-preview1；本轮同版本重发修复公交线路号显示（十进制折算，地铁打包码保持原码），本机交易账本与备注、保存后自定义卡名称、交易标记与本机 MIFARE 密钥导入继续保留。六张实验卡随正式版发布，但均未真卡逐张验证。开发版 2.0.0-dev15 与实验室版 0.1.0-lab11 留给内部测试，不在此发布。网页 NFC 实验页从首页右上角进入，只读 NDEF，不读取交通卡或银行卡 APDU。
 - 下载区另有 Windows 1.1.0-preview2 测试包：PC/SC 只读，未在真实读卡器与真实银行卡上验收，无代码签名。
 - 站点已移除跨平台对比与相关描述；主站只保留 Android 下载、Windows 测试版下载、功能、卡片、开发进展、隐私与 FAQ。
 - 自定义域名 `superreader.828696.xyz` 已解析到 Cloudflare（104.21.30.65 / 172.67.172.53）；GitHub Pages 默认地址 `https://zsof-rui.github.io/SuperReader/` 不依赖该 DNS。

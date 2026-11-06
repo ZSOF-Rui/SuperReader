@@ -32,11 +32,11 @@ certutil -hashfile SuperReader-2.0.0.apk SHA256
 
 | 文件 | 大小 | SHA-256 |
 | --- | --- | --- |
-| `SuperReader-2.0.0.apk` | 13,771,270 字节 | `0917c8f39158ab1134ff5ba2b4f67686b12d3ead3585261f39f18c8477b7b780` |
-| `SuperReader-2.0.0-preview1.apk` | 13,771,290 字节 | `3bc0cd834a1ed08bd8857a18c2973af990f1350bf9a5f6469ccaacd01a152ac2` |
+| `SuperReader-2.0.0.apk` | 13,771,270 字节 | `4bc37d6abd1704faa645511c0f71da2dee38b9bdbe41bbe7d9c15c8aad792a06` |
+| `SuperReader-2.0.0-preview1.apk` | 13,771,290 字节 | `68c31073f80acdd0a52e4c57e4eb2b5666bdac9435604f3f3c95667f7da73a9e` |
 | `SuperReader-Windows-1.1.0-preview2-r2.zip` | 23,709,516 字节 | `8021fd016e19af19b9a3bd3c2ac88534f44206449e65b8e5e701c95b1dd6c20e` |
 
-以 `site/data/releases.json` 与 GitHub Release 附带的 `SHA256SUMS` 为准。本轮正式版与预览版分别升到 2.0.0 (20) 与 2.0.0-preview1 (40)，清单中的 `buildId` 均为 `20261105T172538Z`、`builtAt` 均为 `1793899538401`；两个包都新增本机交易账本与交易备注。
+以 `site/data/releases.json` 与 GitHub Release 附带的 `SHA256SUMS` 为准。本轮保持 2.0.0 (20) 与 2.0.0-preview1 (40) 版本号重发，修复公交线路号显示；清单中的 `buildId` 均为 `20261106T141925Z`、`builtAt` 均为 `1793974765142`。带构建标识的旧同版本包会收到一次更新提示；更早的、没有 `buildId` 的同版本包需要手动安装一次。
 
 ## Android 包名与版本
 

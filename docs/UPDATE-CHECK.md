@@ -31,12 +31,12 @@
       "latest": {
         "versionName": "2.0.0",
         "versionCode": 20,
-        "releasedAt": "2026-11-06T01:28:00+08:00",
-        "buildId": "20261105T172538Z",
-        "builtAt": 1793899538401,
+        "releasedAt": "2026-11-06T22:21:00+08:00",
+        "buildId": "20261106T141925Z",
+        "builtAt": 1793974765142,
         "file": "downloads/SuperReader-2.0.0.apk",
         "sizeBytes": 13771270,
-        "sha256": "0917c8f39158ab1134ff5ba2b4f67686b12d3ead3585261f39f18c8477b7b780",
+        "sha256": "4bc37d6abd1704faa645511c0f71da2dee38b9bdbe41bbe7d9c15c8aad792a06",
         "notes": ["…"]
       },
       "history": []
