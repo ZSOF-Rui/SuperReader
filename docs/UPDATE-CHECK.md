@@ -29,14 +29,14 @@
       "label": "正式版",
       "packageName": "com.superreader.app",
       "latest": {
-        "versionName": "2.0.0",
-        "versionCode": 20,
-        "releasedAt": "2026-11-06T23:30:00+08:00",
-        "buildId": "20261106T152019Z",
-        "builtAt": 1793978419643,
-        "file": "downloads/SuperReader-2.0.0.apk",
-        "sizeBytes": 13771270,
-        "sha256": "46977fc13dad55d013905fd7d0beae533651896ec85d9894c22c49011657dc2d",
+        "versionName": "2.0.1",
+        "versionCode": 21,
+        "releasedAt": "2026-11-09T20:50:00+08:00",
+        "buildId": "20261109T124543Z",
+        "builtAt": 1794228343605,
+        "file": "downloads/SuperReader-2.0.1.apk",
+        "sizeBytes": 13787682,
+        "sha256": "3d52c2ad4e31f0584c9dc9469e9b9c9f47bd56d3a5c40789e1b4998a07983eb9",
         "notes": ["…"]
       },
       "history": []

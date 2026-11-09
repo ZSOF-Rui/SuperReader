@@ -190,7 +190,7 @@
     <header class="section-head">
       <p class="kicker">支持范围</p>
       <h2 id="cards-title">支持哪些卡片</h2>
-      <p>当前正式版 2.0.0 重构了交易列表与详情：线路、时间、金额分行显示，长名称省略不挤压金额；读卡原始数据、支持应用与说明默认折叠，交通交易可展开「记录字段」查看类型、终端、子类型、编码与十进制线路号。线路解析与实验室报告同源，站点表线路名与卡内线路号不一致时两者都保留。版本同时包含本机交易账本：每次读卡后自动合并新交易，单卡最多留存 400 条，卡内只保留最近 30 条也不影响历史累计；早前留存但已滚出卡内的记录标「本机留存」。每笔交易可加、改、删备注（最多 120 字），备注只保存在本机，不写入卡片。设置里可查看累计卡数与交易数，也可一键清空。其余能力延续 1.9.0：交通联合、城市一卡通、银联 / EMV 银行卡、电子证件、全球公开卡种目录、四套配色，以及回乡证与台胞证两项实验证件；六张实验卡、ICOCA / PASMO、NETS FlashPay 识别与 SAK 0x28 卡的 MIFARE 兼容区只读回退继续保留。六张实验卡与两项实验证件均未在真实卡片上逐张验证，不承诺成功率；预览版 2.0.0-preview1 在此基础上继续保留手机读卡桥接与开发设置项。</p>
+      <p>当前正式版 2.0.1 修复电子证件 BAC 认证失败：芯片返回 SW 6984 时，过去只按一种机读码顺序认证，还会把被拒绝的认证原样重发；现在 6300 / 6984 都会重选应用并按两种机读码顺序各试一次，只有长度类拒绝才重发，6983 锁定不再回退。其余能力延续 2.0.0：交易列表与详情重构、交通线路字段、本机交易账本与交易备注、四套配色、回乡证与台胞证实验入口、全球公开卡种目录、本机 MIFARE 密钥库与六张实验卡。六张实验卡与两项实验证件均未在真实卡片上逐张验证，不承诺成功率；预览版 2.0.1-preview1 在此基础上继续保留手机读卡桥接与开发设置项。</p>
     </header>
 
     <p class="table-hint">表格可左右滑动查看完整内容。</p>
@@ -253,20 +253,20 @@
     <div class="download-panel" data-channel="stable">
       <div class="download-main">
         <p class="channel-kicker">Android · 正式版</p>
-        <h3>卡阅 <span class="js-version">2.0.0</span></h3>
-        <p>本次同版本重发合并两项改动：交易列表改为分行的卡片式布局，线路 / 站点与时间、金额分开显示，长名称省略不挤压金额；读卡原始数据、支持应用与说明默认折叠，交易详情改为可展开面板。交通线路字段与实验室报告使用同一份解码：1E 旅程记录第 10–11 字节的线路号按十进制显示（如 0079 → 121 路），站点表线路名与卡内线路号不一致时两者都显示，合并 18 消费记录后也不再丢失线路码；点开交通交易可看「记录字段」与原始 HEX，这类偏移只用于 1E 旅程记录，18 消费记录不按同一布局解释。版本号仍是 2.0.0 (20)。其余功能不变：本机交易账本在读卡后自动合并新交易，单卡最多留存 400 条，突破卡内 30 条上限；早前留存但已滚出卡内的记录标「本机留存」。每笔交易可加、改、删备注（最多 120 字），备注只存本机、不写入卡片。设置新增「本机交易累计」入口，可查看累计并可一键清空。其余能力延续 1.9.0：交通联合、城市一卡通、银联 / EMV 银行卡、电子证件、全球公开卡种目录与四套配色，以及回乡证与台胞证两项实验证件；本机 MIFARE 密钥库最多 32 把，只存本机并掩码显示。</p>
+        <h3>卡阅 <span class="js-version">2.0.1</span></h3>
+        <p>本次修复电子证件 BAC 认证失败：芯片返回 SW 6984 时，过去只按一种机读码顺序认证，还会把被拒绝的认证原样重发；现在 6300 / 6984 都会重选证件应用，再按两种机读码顺序各认证一次，只有长度类拒绝（6Cxx / 6700）才用 Le=0 重发，SW 6983 锁定不再回退。两种顺序都失败时会明确提示已尝试两种机读码顺序，并引导核对证面上的号码、出生日期与有效期。版本升到 2.0.1 (21)；交易列表与详情、交通线路字段、本机交易账本与备注、四套配色、实验证件、全球公开卡种目录与本机 MIFARE 密钥库等能力不变，仍不写卡、不克隆、不上传卡片数据。</p>
         <dl class="download-meta">
-          <div><dt>versionCode</dt><dd class="js-code">20</dd></div>
+          <div><dt>versionCode</dt><dd class="js-code">21</dd></div>
           <div><dt>包名</dt><dd><code class="js-package">com.superreader.app</code></dd></div>
           <div><dt>大小</dt><dd class="js-size">13.1 MB</dd></div>
-          <div><dt>更新日期</dt><dd class="js-date">2026-11-06</dd></div>
+          <div><dt>更新日期</dt><dd class="js-date">2026-11-09</dd></div>
           <div><dt>要求</dt><dd>Android 8.0+</dd></div>
         </dl>
         <div class="download-actions">
-          <a class="btn btn-primary js-download" href="downloads/SuperReader-2.0.0.apk" download>下载正式版 APK</a>
-          <button class="btn btn-quiet copy-sha" type="button" data-sha="46977fc13dad55d013905fd7d0beae533651896ec85d9894c22c49011657dc2d">复制 SHA-256</button>
+          <a class="btn btn-primary js-download" href="downloads/SuperReader-2.0.1.apk" download>下载正式版 APK</a>
+          <button class="btn btn-quiet copy-sha" type="button" data-sha="3d52c2ad4e31f0584c9dc9469e9b9c9f47bd56d3a5c40789e1b4998a07983eb9">复制 SHA-256</button>
         </div>
-        <p class="sha-line"><span>SHA-256</span><code class="js-sha">46977fc13dad55d013905fd7d0beae533651896ec85d9894c22c49011657dc2d</code></p>
+        <p class="sha-line"><span>SHA-256</span><code class="js-sha">3d52c2ad4e31f0584c9dc9469e9b9c9f47bd56d3a5c40789e1b4998a07983eb9</code></p>
       </div>
       <aside class="download-side">
         <h4>正式版须知</h4>
@@ -284,20 +284,20 @@
     <div class="download-panel is-preview" data-channel="preview">
       <div class="download-main">
         <p class="channel-kicker">Android · 预览版</p>
-        <h3>卡阅 <span class="js-version">2.0.0-preview1</span></h3>
-        <p>本次同版本重发同步正式版的两项改动：交易列表改为分行卡片式布局，长名称省略不挤压金额，原始数据与支持应用默认折叠，交易详情可展开；交通线路字段与实验室报告同源，公交线路号按十进制显示，站点表线路名与卡内线路号不一致时两者都保留，合并 18 消费记录后不再丢失线路码。点开交通交易可看「记录字段」与原始 HEX。版本号仍是 2.0.0-preview1 (40)。其余功能与正式版一致：在正式版 2.0.0 基础上，继续保留开发版的手机读卡桥接与开发设置项：桥接只监听局域网并传输脱敏诊断文本，正式版不含桥接。本机交易账本、交易备注与「本机留存」标记与正式版一致：单卡最多留存 400 条，备注只存本机、不写入卡片。本机 MIFARE 密钥库最多 32 把，只存本机并掩码显示，不做字典爆破。仍是只读，不写卡、不上传。</p>
+        <h3>卡阅 <span class="js-version">2.0.1-preview1</span></h3>
+        <p>本次同步正式版的电子证件 BAC 认证修复：SW 6300 / 6984 会重选应用并尝试两种机读码顺序，只有长度类拒绝才重发，SW 6983 锁定不回退。版本升到 2.0.1-preview1 (41)；其余功能与正式版一致，并继续保留开发版的手机读卡桥接与开发设置项：桥接只监听局域网并传输脱敏诊断文本，正式版不含桥接。本机交易账本、交易备注、交通线路字段与本机 MIFARE 密钥库不变，仍是只读，不写卡、不上传。</p>
         <dl class="download-meta">
-          <div><dt>versionCode</dt><dd class="js-code">40</dd></div>
+          <div><dt>versionCode</dt><dd class="js-code">41</dd></div>
           <div><dt>包名</dt><dd><code class="js-package">com.superreader.app.preview</code></dd></div>
           <div><dt>大小</dt><dd class="js-size">13.1 MB</dd></div>
-          <div><dt>更新日期</dt><dd class="js-date">2026-11-06</dd></div>
+          <div><dt>更新日期</dt><dd class="js-date">2026-11-09</dd></div>
           <div><dt>要求</dt><dd>Android 8.0+</dd></div>
         </dl>
         <div class="download-actions">
-          <a class="btn btn-primary js-download" href="downloads/SuperReader-2.0.0-preview1.apk" download>下载预览版 APK</a>
-          <button class="btn btn-quiet copy-sha" type="button" data-sha="3b20145b7294fcd52860626022b9121d3beac6e9ca204b907ceec8f39f0772a1">复制 SHA-256</button>
+          <a class="btn btn-primary js-download" href="downloads/SuperReader-2.0.1-preview1.apk" download>下载预览版 APK</a>
+          <button class="btn btn-quiet copy-sha" type="button" data-sha="d9c5eb556bd333399c9fefe0b0941113255fa43d5fcae63e1bc5b66b3e6cb647">复制 SHA-256</button>
         </div>
-        <p class="sha-line"><span>SHA-256</span><code class="js-sha">3b20145b7294fcd52860626022b9121d3beac6e9ca204b907ceec8f39f0772a1</code></p>
+        <p class="sha-line"><span>SHA-256</span><code class="js-sha">d9c5eb556bd333399c9fefe0b0941113255fa43d5fcae63e1bc5b66b3e6cb647</code></p>
       </div>
       <aside class="download-side">
         <h4>预览版须知</h4>
@@ -350,11 +350,11 @@
       <div class="verify-body">
         <p>先把文件名与上方一致，再在文件所在目录运行对应命令。哈希应与页面显示的 64 位字符串完全一致。</p>
         <p><strong>Windows PowerShell</strong></p>
-        <pre><code>Get-FileHash .\SuperReader-2.0.0.apk -Algorithm SHA256
+        <pre><code>Get-FileHash .\SuperReader-2.0.1.apk -Algorithm SHA256
 Get-FileHash .\SuperReader-Windows-1.1.0-preview2-r2.zip -Algorithm SHA256</code></pre>
         <p><strong>macOS / Linux</strong></p>
-        <pre><code>shasum -a 256 SuperReader-2.0.0.apk</code></pre>
-        <p>预览版把文件名换成 <code>SuperReader-2.0.0-preview1.apk</code>。Android 包均为测试签名，Windows 包没有代码签名，均未上架应用商店。安装时系统可能提示“未知来源”或“未知发布者”，这是正常现象；请只从本页或项目 Release 下载。</p>
+        <pre><code>shasum -a 256 SuperReader-2.0.1.apk</code></pre>
+        <p>预览版把文件名换成 <code>SuperReader-2.0.1-preview1.apk</code>。Android 包均为测试签名，Windows 包没有代码签名，均未上架应用商店。安装时系统可能提示“未知来源”或“未知发布者”，这是正常现象；请只从本页或项目 Release 下载。</p>
       </div>
     </details>
   </div>
@@ -366,7 +366,7 @@ Get-FileHash .\SuperReader-Windows-1.1.0-preview2-r2.zip -Algorithm SHA256</code
       <p class="kicker">版本检查</p>
       <h2 id="update-title">检查是否有新版本</h2>
       <p>这是浏览器里的版本比较工具：读取本站的 <code>data/releases.json</code>，按所选通道的 versionCode 比较，不会上传你安装的版本。App 启动后会自动检查一次，也可以在「设置 → 检查更新」手动复查；检查会同时读取官网、GitHub 与镜像站的版本清单，只读取清单，不上传卡片数据。App 还会识别同版本号的新构建：版本号不变、安装包重新发布时也能提示一次。</p>
-      <p class="hint">在 App 的「设置 → 检查更新」里可以看到当前版本，例如 <code>2.0.0 (20)</code>，括号里的数字就是 versionCode。正式版与预览版包名不同，请选择对应通道再比较。</p>
+      <p class="hint">在 App 的「设置 → 检查更新」里可以看到当前版本，例如 <code>2.0.1 (21)</code>，括号里的数字就是 versionCode。正式版与预览版包名不同，请选择对应通道再比较。</p>
       <ul class="update-points">
         <li>版本清单是静态文件，官网、GitHub 与镜像站三处内容一致。</li>
         <li>比较在浏览器本地完成，不会写入服务器日志。</li>
@@ -386,9 +386,9 @@ Get-FileHash .\SuperReader-Windows-1.1.0-preview2-r2.zip -Algorithm SHA256</code
         <div class="field">
           <label for="current-code">当前 versionCode</label>
           <input id="current-code" name="currentCode" type="number" min="1" step="1" inputmode="numeric" value="19" required>
-          <p class="field-hint">只填数字，例如 2.0.0 (20) 里的 20。</p>
+          <p class="field-hint">只填数字，例如 2.0.1 (21) 里的 21。</p>
         </div>
-        <p class="channel-hint" id="channel-hint">正式版最新：2.0.0 (20) · 预览版最新：2.0.0-preview1 (40)</p>
+        <p class="channel-hint" id="channel-hint">正式版最新：2.0.1 (21) · 预览版最新：2.0.1-preview1 (41)</p>
         <button class="btn btn-primary btn-block" type="submit" id="update-submit">检查更新</button>
       </form>
       <div class="update-result" id="update-result" role="status" aria-live="polite">
@@ -404,7 +404,7 @@ Get-FileHash .\SuperReader-Windows-1.1.0-preview2-r2.zip -Algorithm SHA256</code
     <header class="section-head">
       <p class="kicker">开发进展</p>
       <h2 id="roadmap-title">正在测试的新东西</h2>
-      <p>正式版已重新发布 <strong>2.0.0</strong>，合并交易列表与详情重构、交通线路字段修复：线路、时间、金额分行显示，长名称省略不挤压金额；原始数据与支持应用默认折叠，交通交易可展开「记录字段」查看类型、终端、子类型、编码与十进制线路号。线路解析与实验室报告同源：卡内线路号按十进制显示（如 0079 → 121 路），站点表线路名与卡内线路号不一致时两者都保留，合并 18 消费记录后不再丢失线路码。本机交易账本与交易备注继续保留：读卡后自动合并新交易，单卡最多留存 400 条，卡内只保留 30 条也能累计历史；早前留存但已滚出卡内的记录标「本机留存」，每笔交易可加、改、删备注，设置里可查看累计并一键清空。其余能力延续 1.9.0：交通联合、城市一卡通、银联 / EMV 银行卡、电子证件、全球公开卡种目录、四套配色与公开密钥库。预览版 <strong>2.0.0-preview1</strong> 继续保留开发版的手机读卡桥接与开发设置项；开发版 <strong>2.0.0-dev16</strong> 继续内部验证。三个公开版本都支持保存后自定义卡名称；六张实验卡仍会明确标注“实验、未真卡逐张验证”。</p>
+      <p>正式版已更新到 <strong>2.0.1</strong>，修复电子证件 BAC 认证失败：芯片返回 SW 6984 时会重选应用并尝试两种机读码顺序，被拒绝的认证不再原样重发，6983 锁定不回退；两种顺序都失败时会提示核对证面信息。其余能力延续 2.0.0：交易列表与详情重构、交通线路字段、本机交易账本与交易备注、本机 MIFARE 密钥库、四套配色与全球公开卡种目录。预览版 <strong>2.0.1-preview1</strong> 同步修复并继续保留开发版的手机读卡桥接与开发设置项；开发版 <strong>2.0.1-dev1</strong> 继续内部验证。三个公开版本都支持保存后自定义卡名称；六张实验卡仍会明确标注“实验、未真卡逐张验证”。</p>
     </header>
 
     <div class="roadmap-grid">
@@ -412,20 +412,20 @@ Get-FileHash .\SuperReader-Windows-1.1.0-preview2-r2.zip -Algorithm SHA256</code
         <div class="roadmap-top"><span class="roadmap-no">01</span><span class="badge badge-internal">正式版已包含</span></div>
         <h3>读卡越久，交易记录越全</h3>
         <p>卡内通常只保留最近 30 条交易。卡阅在每次读卡后把新交易合并进本机账本，单卡最多留存 400 条；本次卡内读到的记录正常显示，早前留存但已滚出卡内的记录标「本机留存」。每笔交易还能加备注，备注只保存在本机，不写入卡片。</p>
-        <p class="tag-line"><span>2.0.0</span><span>单卡 400 条</span><span>本机备注</span></p>
+        <p class="tag-line"><span>2.0.1</span><span>单卡 400 条</span><span>本机备注</span></p>
         <a class="roadmap-link" href="#download">下载正式版 <span aria-hidden="true">→</span></a>
       </article>
 
       <article class="roadmap-card">
         <div class="roadmap-top"><span class="roadmap-no">02</span><span class="badge badge-internal">正式版已包含</span></div>
         <h3>六张实验卡，随正式版发布</h3>
-        <p>八达通、澳门通、悠游卡、T-money、Suica、EZ-Link 的读取代码已进入正式版 2.0.0。它们仍是实验读取：只读、不写卡，也没有在真实卡片上逐张验证，不承诺成功率。</p>
-        <p class="tag-line"><span>2.0.0</span><span>六张卡</span><span>待真卡核验</span></p>
+        <p>八达通、澳门通、悠游卡、T-money、Suica、EZ-Link 的读取代码已进入正式版 2.0.1。它们仍是实验读取：只读、不写卡，也没有在真实卡片上逐张验证，不承诺成功率。</p>
+        <p class="tag-line"><span>2.0.1</span><span>六张卡</span><span>待真卡核验</span></p>
         <a class="roadmap-link" href="#download">下载正式版 <span aria-hidden="true">→</span></a>
       </article>
     </div>
 
-    <p class="roadmap-note">开发版 <code>2.0.0-dev16</code> 与实验室版 <code>0.1.0-lab11</code> 仍只用于内部核验，不写入 <code>releases.json</code>；预览版 <code>2.0.0-preview1</code> 已加入版本清单，可在上方下载。六张实验卡与两项实验证件尚未完成真卡逐张验证，正式版与预览版都不会把它们写成“已支持”；站点表只覆盖有公开数据的城市，查不到时显示卡内编码与终端号，不猜线路名。</p>
+    <p class="roadmap-note">开发版 <code>2.0.1-dev1</code> 与实验室版 <code>0.1.0-lab12</code> 仍只用于内部核验，不写入 <code>releases.json</code>；预览版 <code>2.0.1-preview1</code> 已加入版本清单，可在上方下载。六张实验卡与两项实验证件尚未完成真卡逐张验证，正式版与预览版都不会把它们写成“已支持”；站点表只覆盖有公开数据的城市，查不到时显示卡内编码与终端号，不猜线路名。</p>
   </div>
 </section>
 
@@ -459,7 +459,7 @@ Get-FileHash .\SuperReader-Windows-1.1.0-preview2-r2.zip -Algorithm SHA256</code
       </details>
       <details>
         <summary>预览版和开发版有什么区别？</summary>
-        <p>正式版 2.0.0 包含交易列表与详情重构、交通线路字段修复、本机交易账本、交易备注、四套配色、回乡证与台胞证两项实验证件、全球公开卡种目录与六张实验卡，也包括本机 MIFARE 密钥库。预览版 2.0.0-preview1 在此基础上继续保留开发版的手机读卡桥接与开发设置项，使用独立包名，可与正式版共存。开发版 2.0.0-dev16 与实验室版 0.1.0-lab11 继续内部验证，不公开分发。实验卡与两项实验证件都尚未真卡逐张验证。</p>
+        <p>正式版 2.0.1 修复了电子证件 BAC 认证失败（SW 6984 会尝试两种机读码顺序），并保留 2.0.0 的交易列表与详情重构、交通线路字段、本机交易账本与交易备注、四套配色、回乡证与台胞证两项实验证件、全球公开卡种目录与六张实验卡，也包括本机 MIFARE 密钥库。预览版 2.0.1-preview1 在此基础上继续保留开发版的手机读卡桥接与开发设置项，使用独立包名，可与正式版共存。开发版 2.0.1-dev1 与实验室版 0.1.0-lab12 继续内部验证，不公开分发。实验卡与两项实验证件都尚未真卡逐张验证。</p>
       </details>
       <details>
         <summary>卡里只有最近 30 条交易，以前的记录怎么办？</summary>
